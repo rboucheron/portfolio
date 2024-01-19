@@ -12,12 +12,11 @@ function Header(props) {
       </div>
       <div className="links">
         <Link to="/">A propos</Link>
-        <Link to="/">Compétences</Link>
+      
+
         <Link to="/">Projets</Link>
         <Link to="/">Contact</Link>
-        <a href="lien-vers-linkedin" target="_blank" rel="noopener noreferrer">
-          Cv
-        </a>
+
         <a href="lien-vers-linkedin" target="_blank" rel="noopener noreferrer">
           Linkedin
         </a>
