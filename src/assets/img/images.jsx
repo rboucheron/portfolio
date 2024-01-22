@@ -11,5 +11,6 @@ const IMAGES = {
   scss: new URL("./scss.svg", import.meta.url).href,
   tailwind: new URL("./tailwind.svg", import.meta.url).href,
   mysql: new URL("./mysql.svg", import.meta.url).href,
+  grow: new URL("./grow.svg", import.meta.url).href,
 };
 export default IMAGES;

@@ -1,7 +1,7 @@
 import React from "react";
 import project from "../data/project.json";
 import IMAGES from "../assets/img/images";
-
+import { Maximize2 } from "lucide-react";
 function Project(props) {
   return (
     <section id="project">
@@ -18,6 +18,9 @@ function Project(props) {
               {post.tools.map((tool) => (
                 <div className="tool"> {tool}</div>
               ))}
+            </div>
+            <div className="grow">
+              <Maximize2 />
             </div>
           </div>
         ))}

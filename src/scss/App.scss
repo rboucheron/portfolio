@@ -306,12 +306,12 @@ section#project {
 
         h3 {
           color: $black;
-          font-size: 2rem;
+          font-size: 1.9rem;
           font-weight: 400;
         }
         h4 {
           color: $gris;
-          font-size: 1.3rem;
+          font-size: 1rem;
           font-weight: 400;
         }
       }
@@ -319,7 +319,7 @@ section#project {
       p {
         margin-top: 25px;
         color: $gris;
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-weight: 400;
       }
       .tools {
@@ -338,6 +338,15 @@ section#project {
           padding-right: 10px;
           margin: 5px;
           border-radius: 15px;
+        }
+      }
+      .grow {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        img {
+          width: 100%;
         }
       }
     }
