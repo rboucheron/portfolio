@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Header.jsx
 import IMAGES from "../assets/img/images";
+import ToggleMode from './ToggleMode'; 
 
 function Header(props) {
   return (
@@ -11,18 +12,35 @@ function Header(props) {
         <img src={IMAGES.logo} alt="" />
       </div>
       <div className="links">
-        <Link to="/">A propos</Link>
-      
+        <Link to="/" className="navelement">
+          A propos
+        </Link>
 
-        <Link to="/">Projets</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/" className="navelement">
+          Projets
+        </Link>
+        <Link to="/" className="navelement">
+          Contact
+        </Link>
 
-        <a href="lien-vers-linkedin" target="_blank" rel="noopener noreferrer">
+        <a
+          href="lien-vers-linkedin"
+          className="navelement"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Linkedin
         </a>
-        <a href="lien-vers-github" target="_blank" rel="noopener noreferrer">
+        <a
+          href="lien-vers-github"
+          className="navelement"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Github
         </a>
+        <ToggleMode />
+        
       </div>
     </header>
   );
