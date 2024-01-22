@@ -8,7 +8,7 @@ function Project(props) {
       <h2>Projets</h2>
       <div className="cards">
         {project.map((post) => (
-          <div className="card">
+          <div className="card" key={post.id}>
             <div className="title">
               <h3>{post.title}</h3>
               <h4>{post.date}</h4>
