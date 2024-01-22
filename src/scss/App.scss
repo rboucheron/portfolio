@@ -92,7 +92,7 @@ header {
   }
 }
 .title {
-  margin-top: 20%;
+  margin-top: 15%;
   h1 {
     width: 80%;
     display: flex;
@@ -208,6 +208,42 @@ section#about {
             color: $orange;
           }
         }
+      }
+    }
+  }
+}
+section#skills {
+  width: 100%;
+  margin-top: 15%;
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 300;
+    color: $orange;
+  }
+  .skillgrid {
+    width: 45%;
+    margin: auto;
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4rem;
+    margin-top: 5%;
+    .skill {
+      display: block;
+      .img {
+        width: 80%;
+        margin: auto;
+        img {
+          width: 100%;
+        }
+      }
+      h3 {
+        font-size: 0.9rem;
+        font-weight: 100;
+        width: 100%;
+        text-align: center;
       }
     }
   }
