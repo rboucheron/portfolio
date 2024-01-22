@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Header.jsx
 import IMAGES from "../assets/img/images";
-import ToggleMode from './ToggleMode'; 
+import ToggleMode from "./ToggleMode";
 
 function Header(props) {
   return (
@@ -40,7 +40,6 @@ function Header(props) {
           Github
         </a>
         <ToggleMode />
-        
       </div>
     </header>
   );

@@ -17,7 +17,6 @@ $gris: #b1b1b1;
 :root {
   background-color: $white;
   color: $black;
-  height: 300%;
   transition-property: background, color;
   transition-duration: 500ms;
   &.dark {
@@ -33,7 +32,6 @@ $gris: #b1b1b1;
             a {
               background-color: $orange;
               color: $black;
-
               &:hover {
                 background: $black;
                 color: $orange;
@@ -60,7 +58,6 @@ header {
   background: $white;
   transition-property: background;
   transition-duration: 500ms;
-
   .logo {
     width: 10%;
     display: flex;
@@ -70,7 +67,6 @@ header {
       width: 35%;
     }
   }
-
   .links {
     display: grid;
     grid-template-columns: repeat(6, 5rem);
@@ -90,18 +86,32 @@ header {
       color: $orange;
       text-decoration: none;
     }
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
 }
 .title {
-  margin-top: 15%;
+  margin-top: 20%;
   h1 {
-    width: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     text-align: center;
-
     font-size: 5rem;
-
+    @media screen and (max-width: 800px) {
+      font-size: 3rem;
+      text-align: center;
+      display: block;
+    }
     span {
       display: inline-flex;
+      @media screen and (max-width: 800px) {
+        margin-left: 5px;
+        width: 25px;
+      }
       margin-left: 25px;
       width: 25px;
     }
@@ -113,6 +123,11 @@ header {
     width: 100%;
     text-align: center;
     font-size: 1rem;
+    @media screen and (max-width: 800px) {
+      font-size: 0.8rem;
+      width: 70%;
+      margin: auto;
+    }
   }
 }
 section#about {
@@ -126,12 +141,24 @@ section#about {
     color: $orange;
   }
   .content {
+    width: 100%;
     display: flex;
     margin-top: 5%;
     display: flex;
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
     .right {
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        margin-top: 10%;
+      }
       width: 30%;
       .img {
+        @media screen and (max-width: 800px) {
+          width: 80%;
+        }
         width: 70%;
         margin: auto;
 
@@ -142,14 +169,31 @@ section#about {
       }
     }
     .left {
+      @media screen and (max-width: 800px) {
+        margin-top: 10%;
+        width: 100%;
+      }
       width: 80%;
       p {
         margin: auto;
         width: 90%;
+        font-size: 1rem;
+        @media screen and (max-width: 800px) {
+          width: 80%;
+          font-size: 0.8rem;
+        }
       }
       .btn {
         margin-top: 5%;
         margin-left: 5%;
+        @media screen and (max-width: 800px) {
+          width: 100%;
+          margin: auto;
+          margin-top: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         a {
           padding: 10px;
           border-radius: 15px;
