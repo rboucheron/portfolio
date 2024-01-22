@@ -59,7 +59,7 @@ header {
   transition-property: background;
   transition-duration: 500ms;
   .logo {
-    width: 10%;
+    width: 125px;
     display: flex;
     justify-content: center;
     img {
@@ -101,10 +101,12 @@ header {
     margin: auto;
     text-align: center;
     font-size: 5rem;
+    @media screen and (max-width: 1059px) {
+      display: block;
+    }
     @media screen and (max-width: 800px) {
       font-size: 3rem;
       text-align: center;
-      display: block;
     }
     span {
       display: inline-flex;
@@ -223,17 +225,20 @@ section#skills {
     color: $orange;
   }
   .skillgrid {
-    width: 45%;
+    width: 50%;
     margin: auto;
     display: grid;
     align-content: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 4rem;
     margin-top: 5%;
+    @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .skill {
       display: block;
       .img {
-        width: 80%;
+        width: 50px;
         margin: auto;
         img {
           width: 100%;
@@ -246,5 +251,16 @@ section#skills {
         text-align: center;
       }
     }
+  }
+}
+section#project {
+  margin-top: 20%;
+  width: 100%;
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 300;
+    color: $orange;
   }
 }

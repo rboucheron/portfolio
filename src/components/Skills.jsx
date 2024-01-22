@@ -41,8 +41,7 @@ function Skills(props) {
 
           <h3>Mysql</h3>
         </div>
-      </div>
-      <div className="skillgrid">
+
         <div className="skill">
           <div className="img">
             <img src={IMAGES.scss} alt="Scss" />

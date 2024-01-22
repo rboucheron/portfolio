@@ -1,0 +1,16 @@
+[
+    {
+        "id" : 1,
+        "title" : "Reviens", 
+        "content" : "J'ai développé un site de réservation pour le matériel de mon établissement", 
+        "date" : "05/2023",
+        "tools" : ["html", "css", "javascript", "php", "mysql"]
+    }, 
+    {
+        "id" : 2, 
+        "title" : "Mcdonald's",
+        "content" : "J'ai effectué un stage d'une durée d'un mois au sein d'un restaurant McDonald's", 
+        "date" : "07/2023", 
+        "tools" : ["html", "css", "javascript", "php", "mysql"]
+    }
+]
