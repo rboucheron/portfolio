@@ -1,19 +1,27 @@
 import React from "react";
 import project from "../data/project.json";
+import IMAGES from "../assets/img/images";
 
 function Project(props) {
   return (
     <section id="project">
       <h2>Projets</h2>
-      {project.map((post) => (
-        <div className="card">
-          <div className="title">
-            <h3>{post.title}</h3>
-            <h4>{post.date}</h4>
+      <div className="cards">
+        {project.map((post) => (
+          <div className="card">
+            <div className="title">
+              <h3>{post.title}</h3>
+              <h4>{post.date}</h4>
+            </div>
+            <p>{post.content}</p>
+            <div className="tools">
+              {post.tools.map((tool) => (
+                <div className="tool"> {tool}</div>
+              ))}
+            </div>
           </div>
-          <p>{post.content}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 }
