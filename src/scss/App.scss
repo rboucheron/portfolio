@@ -332,6 +332,7 @@ section#project {
       flex-direction: column;
     }
     .card {
+      cursor: pointer;
       transition-property: background, color;
       transition-duration: 500ms;
       width: 300px;
