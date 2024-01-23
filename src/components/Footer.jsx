@@ -6,18 +6,18 @@ function Footer(props) {
     <footer>
       <div className="grid">
         <div>
-          <Github />
+        <Github size={40} strokeWidth={1.5} />
         </div>
         <div>
           {" "}
-          <Codepen />
+          <Codepen size={40} strokeWidth={1.5} />
         </div>
 
         <div>
-          <Linkedin />
+          <Linkedin size={40} strokeWidth={1.5} />
         </div>
         <div>
-          <Mail />
+          <Mail size={40} strokeWidth={1.5} />
         </div>
       </div>
     </footer>
