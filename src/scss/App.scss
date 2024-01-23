@@ -14,7 +14,9 @@ $white: #fffbf9;
 $black: #2f2f2f;
 $gris: #b1b1b1;
 $dark: #1b1b1b;
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   background-color: $white;
   color: $black;
@@ -55,6 +57,31 @@ $dark: #1b1b1b;
               background-color: $orange;
               color: $black;
             }
+          }
+        }
+      }
+    }
+    section#contact {
+      form {
+        input {
+          color: $black;
+
+          &::placeholder {
+            color: $black;
+          }
+        }
+        textarea {
+          color: $black;
+
+          &::placeholder {
+            color: $black;
+          }
+        }
+        .btn {
+          color: $black;
+          &:hover {
+            background-color: $black;
+            color: $orange;
           }
         }
       }
@@ -247,6 +274,7 @@ section#skills {
     margin: auto;
     display: grid;
     align-content: center;
+    justify-content: center;
     grid-template-columns: repeat(5, 1fr);
     gap: 4rem;
     margin-top: 5%;
@@ -289,7 +317,12 @@ section#project {
     flex-wrap: wrap;
     flex-direction: row;
     flex-flow: row wrap;
-
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
     .card {
       transition-property: background, color;
       transition-duration: 500ms;
@@ -300,16 +333,26 @@ section#project {
       background-color: $white;
       box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
       padding: 20px;
+      @media screen and (max-width: 450px) {
+        width: 250px;
+        padding: 15px;
+      }
 
       .title {
         margin-top: 0px;
 
         h3 {
+          @media screen and (max-width: 450px) {
+            font-size: 1.6rem;
+          }
           color: $black;
           font-size: 1.9rem;
           font-weight: 400;
         }
         h4 {
+          @media screen and (max-width: 450px) {
+            font-size: 0.8rem;
+          }
           color: $gris;
           font-size: 1rem;
           font-weight: 400;
@@ -317,6 +360,11 @@ section#project {
       }
 
       p {
+        @media screen and (max-width: 450px) {
+          font-size: 0.8rem;
+          margin-top: 20px;
+        }
+
         margin-top: 25px;
         color: $gris;
         font-size: 1rem;
@@ -324,11 +372,17 @@ section#project {
       }
       .tools {
         margin-top: 25px;
+        @media screen and (max-width: 450px) {
+          margin-top: 20px;
+        }
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         flex-flow: row wrap;
         .tool {
+          @media screen and (max-width: 450px) {
+            font-size: 0.7rem;
+          }
           background-color: $orange;
           color: $white;
           font-size: 0.9rem;
@@ -348,6 +402,74 @@ section#project {
         img {
           width: 100%;
         }
+      }
+    }
+  }
+}
+section#contact {
+  margin-top: 10%;
+  width: 100%;
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 300;
+    color: $orange;
+    margin-bottom: 3%;
+  }
+  .content {
+    padding-bottom: 15px;
+    width: 50%;
+    margin: auto;
+    border-bottom: 2px solid $orange;
+    border-spacing: 30px 30px;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    input {
+      width: 70%;
+      color: $white;
+      background-color: $orange;
+      border: none;
+      border-radius: 15px;
+      padding: 9px;
+      margin: 10px;
+      &::placeholder {
+        color: $white;
+      }
+    }
+    textarea {
+      width: 70%;
+      color: $white;
+      background-color: $orange;
+      border: none;
+      border-radius: 15px;
+      height: 100px;
+      padding: 9px;
+      margin: 10px;
+      &::placeholder {
+        color: $white;
+      }
+    }
+    .btn {
+      width: 100px;
+      margin: auto;
+      margin-top: 38px;
+      font-size: 1.2rem;
+      padding: 10px;
+      cursor: pointer;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+      transition: background, color;
+      transition-duration: 500ms;
+      &:hover {
+        background: $white;
+        color: $orange;
       }
     }
   }

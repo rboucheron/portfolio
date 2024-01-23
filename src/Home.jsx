@@ -4,6 +4,7 @@ import Title from './components/Title';
 import About from './components/About';
 import Skills from './components/Skills';
 import Project from './components/Project';
+import Contact from './components/Contact';
 
 function Home(props) {
     return (
@@ -13,6 +14,7 @@ function Home(props) {
             < About />
             < Skills />
             < Project />
+            < Contact />
         </>
     );
 }

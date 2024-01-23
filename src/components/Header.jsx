@@ -12,16 +12,16 @@ function Header(props) {
         <img src={IMAGES.logo} alt="" />
       </div>
       <div className="links">
-        <Link to="/" className="navelement">
+        <a href="#about" className="navelement">
           A propos
-        </Link>
+        </a>
 
-        <Link to="/" className="navelement">
+        <a href="#project" className="navelement">
           Projets
-        </Link>
-        <Link to="/" className="navelement">
+        </a>
+        <a href="#contact" className="navelement">
           Contact
-        </Link>
+        </a>
 
         <a
           href="lien-vers-linkedin"
