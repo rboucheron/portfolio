@@ -24,7 +24,7 @@ function Header(props) {
         </a>
 
         <a
-          href="lien-vers-linkedin"
+          href="https://www.linkedin.com/in/rapha%C3%ABl-boucheron-287b02233/"
           className="navelement"
           target="_blank"
           rel="noopener noreferrer"
@@ -32,7 +32,7 @@ function Header(props) {
           Linkedin
         </a>
         <a
-          href="lien-vers-github"
+          href="https://github.com/rboucheron"
           className="navelement"
           target="_blank"
           rel="noopener noreferrer"

@@ -1,5 +1,6 @@
 import React  from "react";
 import { useRef } from "react";
+import emailjs from "mailjs";
 
 
 function Contact(props) {
@@ -10,10 +11,10 @@ function Contact(props) {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_ls0v27g",
+        "template_qmrlfol",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "pGR69NPN7RPx8cgSV"
       )
       .then(
         (result) => {
