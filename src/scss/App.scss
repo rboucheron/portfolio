@@ -118,7 +118,6 @@ header {
     align-content: center;
     place-content: center;
     gap: 0.25rem;
-
     place-content: center;
     button {
       background: transparent;
@@ -420,11 +419,17 @@ section#contact {
   .content {
     padding-bottom: 15px;
     width: 50%;
+    @media screen and (max-width: 800px) {
+      width: 70%;
+    }
     margin: auto;
     border-bottom: 2px solid $orange;
     border-spacing: 30px 30px;
   }
   form {
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -473,4 +478,29 @@ section#contact {
       }
     }
   }
+}
+footer{
+  width: 100%;
+  margin-top: 10%;
+  background-color: $orange;
+  .grid{
+    width: 40%;
+    margin: auto;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    div{
+      width: 100%;
+      svg{
+        font-size: 5rem;
+        color: $white;
+      }
+    }
+
+  
+  }
+ 
+
 }

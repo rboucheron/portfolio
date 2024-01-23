@@ -1,7 +1,6 @@
-import React  from "react";
+import React from "react";
 import { useRef } from "react";
 import emailjs from "mailjs";
-
 
 function Contact(props) {
   const form = useRef();

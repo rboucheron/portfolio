@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// Header.jsx
 import IMAGES from "../assets/img/images";
 import ToggleMode from "./ToggleMode";
 
