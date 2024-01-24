@@ -1,9 +1,11 @@
 import React from "react";
 import { useRef } from "react";
-import emailjs from "mailjs";
+import emailjs from "@emailjs/browser";
+import { toast, Toaster } from "react-hot-toast";
 
 function Contact(props) {
   const form = useRef();
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,10 +19,10 @@ function Contact(props) {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          toast.success("Message envoyer");
         },
         (error) => {
-          console.log(error.text);
+          console.log("erreur");
         }
       );
   };
@@ -33,6 +35,9 @@ function Contact(props) {
           J'attends de vos nouvelles avec impatience !
         </p>
       </div>
+      <>
+        <Toaster />
+      </>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" name="user_name" placeholder="Nom" />
 
