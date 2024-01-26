@@ -1,11 +1,38 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "react-hot-toast";
 
 function Contact(props) {
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  function Form({ onSubmit }) {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+
+      if (onSubmit) {
+        onSubmit();
+      }
+
+      setIsSubmitting(false);
+    };
+  };
+
   const form = useRef();
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,13 +46,14 @@ function Contact(props) {
       )
       .then(
         (result) => {
-          toast.success("Message envoyer");
+          toast.success("Message envoyé");
         },
         (error) => {
-          console.log("erreur");
+          console.log("erreur", error);
         }
       );
   };
+
   return (
     <section id="contact">
       <h2>Contact</h2>
@@ -38,12 +66,27 @@ function Contact(props) {
       <>
         <Toaster />
       </>
-      <form ref={form} onSubmit={sendEmail}>
-        <input type="text" name="user_name" placeholder="Nom" />
-
-        <input type="email" name="user_email" placeholder="Adresse mail" />
-
-        <textarea name="message" placeholder="Message" />
+      <form onSubmit={sendEmail} ref={form}>
+        <input
+          type="text"
+          name="user_name"
+          placeholder="Nom"
+          value={formData.user_name}
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="user_email"
+          placeholder="Adresse mail"
+          value={formData.user_email}
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          placeholder="Message"
+          value={formData.message}
+          onChange={handleChange}
+        />
         <input className="btn" type="submit" value="Envoyer" />
       </form>
     </section>
