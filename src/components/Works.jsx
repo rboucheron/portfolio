@@ -1,9 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import works from "../data/works.json";
-import Project from "./Project";
 import Projects from "./Projects";
-
+import { motion } from "framer-motion";
 function Works(props) {
   const location = useLocation();
   const pathname = location.pathname;
@@ -21,19 +20,27 @@ function Works(props) {
   var index = findIndexInWorks(works, project);
   if (index != -1) {
     return (
-      <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 50 }}
+        exit={{ opacity: 0 }}
+      >
         <h1>{works[index].title}</h1>
         <p>{works[index].content}</p>
-      </>
+      </motion.div>
     );
   } else {
     return (
-      <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 50 }}
+        exit={{ opacity: 0 }}
+      >
         <section id="work">
           <h1>{project} est indisponible </h1>
         </section>
         <Projects />
-      </>
+      </motion.div>
     );
   }
 }
