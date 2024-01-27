@@ -2,16 +2,14 @@ import React from "react";
 import Header from "./components/Header";
 
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import { HashRouter as Router} from "react-router-dom";
+import TheRoutes from "./components/TheRoutes";
 
 function App(props) {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <TheRoutes />
       <Footer />
     </Router>
   );

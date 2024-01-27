@@ -2,6 +2,7 @@
     {
         "id" : 1,
         "title" : "Reviens", 
+        "link" : "reviens",
         "content" : "J'ai développé un site de réservation pour le matériel de mon établissement", 
         "date" : "05/2023",
         "tools" : ["html", "css", "javascript", "php", "mysql"]
@@ -9,6 +10,7 @@
     {
         "id" : 2, 
         "title" : "Mcdonald's",
+        "link" : "mcdonalds",
         "content" : "J'ai effectué un stage d'une durée d'un mois au sein d'un restaurant McDonald's", 
         "date" : "07/2023", 
         "tools" : ["html", "css", "javascript", "php", "mysql"]
@@ -16,6 +18,7 @@
     {
         "id" : 3, 
         "title" : "Webdocumentaire",
+        "link" : "webdocumentaire",
         "content" : "J'ai développé un Webdocumentaire sur un parc situé à Meaux.", 
         "date" : "12/2023", 
         "tools" : ["html", "css", "javascript", "react"]
@@ -23,6 +26,7 @@
     {
         "id" : 4, 
         "title" : "Aéro Club",
+        "link" : "aeroclub",
         "content" : "J'ai effectué la refonte d’un site pour un aéro club.", 
         "date" : "01/2024", 
         "tools" : ["html", "css", "javascript", "php", "mysql"]

@@ -1,6 +1,6 @@
 import React from "react";
 import IMAGES from "../assets/img/images";
-
+import { Squircle } from "@squircle-js/react";
 function About(props) {
   return (
     <section id="about">

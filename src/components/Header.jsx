@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import IMAGES from "../assets/img/images";
 import ToggleMode from "./ToggleMode";
+import { HashLink as Link } from "react-router-hash-link";
 
 function Header(props) {
   return (
@@ -10,16 +11,15 @@ function Header(props) {
         <img src={IMAGES.logo} alt="" />
       </div>
       <div className="links">
-        <a href="#about" className="navelement">
+        <Link to="/#about" className="navelement">
           A propos
-        </a>
-
-        <a href="#project" className="navelement">
+        </Link>
+        <Link to="/#project" className="navelement">
           Projets
-        </a>
-        <a href="#contact" className="navelement">
+        </Link>
+        <Link to="/#contact" className="navelement">
           Contact
-        </a>
+        </Link>
 
         <a
           href="https://www.linkedin.com/in/rapha%C3%ABl-boucheron-287b02233/"

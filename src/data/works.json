@@ -1,0 +1,13 @@
+
+[
+    {
+        "id" : 1,
+        "title" : "Reviens", 
+        "link" : "reviens",
+        "img" : "IMAGES.Reviens",
+        "content" : "J'ai développé un site de réservation pour le matériel de mon établissement. Les utilisateurs doivent créer un compte ou se connecter pour accéder à une page qui répertorie tout le matériel disponible, accompagné d'une image, du nom et d'une description. Les utilisateurs peuvent réserver le matériel en spécifiant la date et l'heure de l'emprunt ainsi que la date et l'heure de retour. Un administrateur a la possibilité d'ajouter ou de supprimer du matériel, et il est responsable de confirmer les demandes d'emprunts.", 
+        "date" : "05/2023",
+        "tools" : ["html", "css", "javascript", "php", "mysql"]
+    }
+  
+]
