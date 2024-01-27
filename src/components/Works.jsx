@@ -8,27 +8,25 @@ function Works(props) {
   const project = pathname.replace("/", "");
 
   var findIndexInWorks = (works, project) => {
-    var WorksCol = works.findIndex(function (element) {
-      return element.link === project;
-    });
+    var WorksCol = works.findIndex((work) => work.link == project);
     if (WorksCol !== -1) {
       return WorksCol;
     }
     return -1;
   };
 
-  
   var index = findIndexInWorks(works, project);
   if (index != -1) {
     return (
-      <section>
-        <h1>{project}</h1>
-      </section>
+      <>
+        <h1>{works[index].title}</h1>
+        <p>{works[index].content}</p>
+      </>
     );
   } else {
     return (
       <section>
-        <h1>Projet : {project} indisponible </h1>
+        <h1>Projet : {project} est indisponible </h1>
       </section>
     );
   }
