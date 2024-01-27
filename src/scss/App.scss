@@ -44,24 +44,24 @@ html {
         }
       }
     }
-    section#project {
-      .cards {
-        .card {
-          background-color: $dark;
-          color: $white;
 
-          h3 {
-            color: $white;
-          }
-          .tools {
-            .tool {
-              background-color: $orange;
-              color: $black;
-            }
+    .cards {
+      .card {
+        background-color: $dark;
+        color: $white;
+
+        h3 {
+          color: $white;
+        }
+        .tools {
+          .tool {
+            background-color: $orange;
+            color: $black;
           }
         }
       }
     }
+
     section#contact {
       form {
         input {
@@ -318,106 +318,108 @@ section#project {
     font-weight: 300;
     color: $orange;
   }
-  .cards {
-    margin: auto;
-    width: 80%;
-    margin-top: 5%;
+}
+
+.cards {
+  margin: auto;
+  width: 80%;
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 800px) {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 800px) {
-      display: flex;
-      flex-direction: column;
+    flex-direction: column;
+  }
+  .card {
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+    transition-property: background, color;
+    transition-duration: 500ms;
+    border-radius: 15px;
+    width: 300px;
+    position: relative;
+    margin: 10px;
+    background-color: $white;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    @media screen and (max-width: 450px) {
+      width: 250px;
+      padding: 15px;
     }
-    .card {
-      text-decoration: none;
-      color: $black;
-      cursor: pointer;
-      transition-property: background, color;
-      transition-duration: 500ms;
-      border-radius: 15px;
-      width: 300px;
-      position: relative;
-      margin: 10px;
-      background-color: $white;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
-      padding: 20px;
-      @media screen and (max-width: 450px) {
-        width: 250px;
-        padding: 15px;
-      }
 
-      .title {
-        margin-top: 0px;
+    .title {
+      margin-top: 0px;
 
-        h3 {
-          @media screen and (max-width: 450px) {
-            font-size: 1.6rem;
-          }
-          color: $black;
-          font-size: 1.9rem;
-          font-weight: 400;
+      h3 {
+        @media screen and (max-width: 450px) {
+          font-size: 1.6rem;
         }
-        h4 {
-          @media screen and (max-width: 450px) {
-            font-size: 0.8rem;
-          }
-          color: $gris;
-          font-size: 1rem;
-          font-weight: 400;
-        }
+        color: $black;
+        font-size: 1.9rem;
+        font-weight: 400;
       }
-
-      p {
+      h4 {
         @media screen and (max-width: 450px) {
           font-size: 0.8rem;
-          margin-top: 20px;
         }
-
-        margin-top: 25px;
         color: $gris;
         font-size: 1rem;
         font-weight: 400;
       }
-      .tools {
-        margin-top: 25px;
-        @media screen and (max-width: 450px) {
-          margin-top: 20px;
-        }
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        flex-flow: row wrap;
-        .tool {
-          @media screen and (max-width: 450px) {
-            font-size: 0.7rem;
-          }
-          background-color: $orange;
-          color: $white;
-          font-size: 0.9rem;
-          font-weight: 300;
-          padding: 5px;
-          padding-left: 10px;
-          padding-right: 10px;
-          margin: 5px;
-          border-radius: 15px;
-        }
+    }
+
+    p {
+      @media screen and (max-width: 450px) {
+        font-size: 0.8rem;
+        margin-top: 20px;
       }
-      .grow {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        width: 30px;
-        img {
-          width: 100%;
+
+      margin-top: 25px;
+      color: $gris;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    .tools {
+      margin-top: 25px;
+      @media screen and (max-width: 450px) {
+        margin-top: 20px;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      flex-flow: row wrap;
+      .tool {
+        @media screen and (max-width: 450px) {
+          font-size: 0.7rem;
         }
+        background-color: $orange;
+        color: $white;
+        font-size: 0.9rem;
+        font-weight: 300;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 5px;
+        border-radius: 15px;
+      }
+    }
+    .grow {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+      img {
+        width: 100%;
       }
     }
   }
 }
+
 section#contact {
   margin-top: 10%;
   width: 100%;
@@ -490,6 +492,23 @@ section#contact {
         color: $orange;
       }
     }
+  }
+}
+section#work {
+  h1 {
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+  }
+  p {
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    font-size: 24px;
+    color: $gris;
+    font-weight: 400;
   }
 }
 footer {

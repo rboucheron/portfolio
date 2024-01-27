@@ -12,6 +12,9 @@ function TheRoutes(props) {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/reviens" element={<Works />} />
+        <Route path="/mcdonalds" element={<Works />} />
+        <Route path="/webdocumentaire" element={<Works />} />
+        <Route path="/aeroclub" element={<Works />} />
       </Routes>
     </AnimatePresence>
   );

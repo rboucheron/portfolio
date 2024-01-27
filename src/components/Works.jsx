@@ -1,6 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import works from "../data/works.json";
+import Project from "./Project";
+import Projects from "./Projects";
 
 function Works(props) {
   const location = useLocation();
@@ -11,8 +13,9 @@ function Works(props) {
     var WorksCol = works.findIndex((work) => work.link == project);
     if (WorksCol !== -1) {
       return WorksCol;
+    } else {
+      return -1;
     }
-    return -1;
   };
 
   var index = findIndexInWorks(works, project);
@@ -25,9 +28,12 @@ function Works(props) {
     );
   } else {
     return (
-      <section>
-        <h1>Projet : {project} est indisponible </h1>
-      </section>
+      <>
+        <section id="work">
+          <h1>{project} est indisponible </h1>
+        </section>
+        <Projects />
+      </>
     );
   }
 }
