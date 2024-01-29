@@ -25,8 +25,16 @@ function Works(props) {
         animate={{ opacity: 50 }}
         exit={{ opacity: 0 }}
       >
-        <h1>{works[index].title}</h1>
-        <p>{works[index].content}</p>
+        <section id="work">
+          <h1>{works[index].title}</h1>
+          <div className="tools">
+            {works[index].tools.map((tool) => (
+              <div className="tool">{tool}</div>
+            ))}
+          </div>
+
+          <p>{works[index].content}</p>
+        </section>
       </motion.div>
     );
   } else {

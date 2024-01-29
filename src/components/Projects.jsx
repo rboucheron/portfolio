@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Projects(props) {
   return (
-    <div className="cards">
+    <>
       {project.map((post) => (
         <Link to={`/${post.link}`} className="card">
           <div className="title">
@@ -23,7 +23,7 @@ function Projects(props) {
           </div>
         </Link>
       ))}
-    </div>
+    </>
   );
 }
 

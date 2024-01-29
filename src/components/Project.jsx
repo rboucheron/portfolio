@@ -5,8 +5,9 @@ function Project(props) {
   return (
     <section id="project">
       <h2>Projets</h2>
-      <Projects />
-    
+      <div className="cards">
+        <Projects />
+      </div>
     </section>
   );
 }
