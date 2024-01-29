@@ -35,15 +35,17 @@ function Works(props) {
 
           <p>{works[index].content}</p>
 
-          <Carrousel>
+      
             <div className="img">
               {works[index].img.map((image, i) => (
                 <img key={i} src={IMAGES[image]} alt="" />
               ))}
             </div>
-          </Carrousel>
 
-          <div className="techno"></div>
+
+          <div className="techno">
+            <p>{works[index].toolsContent}</p>
+          </div>
         </section>
       </motion.div>
     );

@@ -13,5 +13,6 @@ const IMAGES = {
   mysql: new URL("./mysql.svg", import.meta.url).href,
   grow: new URL("./grow.svg", import.meta.url).href,
   reviens: new URL ("./page_objet_reserve 2.png", import.meta.url).href, 
+  webdocumentaire: new URL ("./webdocumentaire.jpeg", import.meta.url).href, 
 };
 export default IMAGES;
