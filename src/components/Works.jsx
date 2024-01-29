@@ -10,11 +10,7 @@ function Works(props) {
 
   var findIndexInWorks = (works, project) => {
     var WorksCol = works.findIndex((work) => work.link == project);
-    if (WorksCol !== -1) {
-      return WorksCol;
-    } else {
-      return -1;
-    }
+    return WorksCol;
   };
 
   var index = findIndexInWorks(works, project);

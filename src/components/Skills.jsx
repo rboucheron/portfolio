@@ -1,83 +1,49 @@
 import React from "react";
 import IMAGES from "../assets/img/images";
+import { motion, useScroll } from "framer-motion";
+import skills from "../data/skills.json";
 
 function Skills(props) {
+  const scrollY = useScroll(); 
+
+  const skillgrid = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const element = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <section id="skills">
       <h2>Compétences</h2>
-      <div className="skillgrid">
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.html} alt="html" />
-          </div>
-
-          <h3>Html</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.css} alt="css" />
-          </div>
-
-          <h3>Css</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.js} alt="javascript" />
-          </div>
-
-          <h3>Javascript</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.php} alt="php" />
-          </div>
-
-          <h3>Php</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.mysql} alt="mysql" />
-          </div>
-
-          <h3>Mysql</h3>
-        </div>
-
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.scss} alt="Scss" />
-          </div>
-          <h3>Scss</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.java} alt="java" />
-          </div>
-
-          <h3>Java</h3>
-        </div>
-
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.python} alt="Python" />
-          </div>
-
-          <h3>Python</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.react} alt="React" />
-          </div>
-
-          <h3>React</h3>
-        </div>
-        <div className="skill">
-          <div className="img">
-            <img src={IMAGES.tailwind} alt="tailwind" />
-          </div>
-
-          <h3>Tailwind</h3>
-        </div>
-      </div>
+      <motion.div
+        className="skillgrid"
+        variants={skillgrid}
+        initial="hidden"
+        whileInView="visible"
+      >
+        {skills.map((skill) => (
+          <motion.div className="skill"  variants={element}>
+            <div className="img">
+              <img src={IMAGES[skill.img]} alt={skill.title} />
+            </div>
+            <h3>{skill.title}</h3>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }
