@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import works from "../data/works.json";
 import Projects from "./Projects";
 import { motion } from "framer-motion";
+import IMAGES from "../assets/img/images";
+import Carrousel from "./Carrousel";
 function Works(props) {
   const location = useLocation();
   const pathname = location.pathname;
@@ -24,27 +26,32 @@ function Works(props) {
         <section id="work">
           <h1>{works[index].title}</h1>
           <div className="tools">
-            {works[index].tools.map((tool) => (
-              <div className="tool">{tool}</div>
+            {works[index].tools.map((tool, idx) => (
+              <div className="tool" key={idx}>
+                {tool}
+              </div>
             ))}
           </div>
 
           <p>{works[index].content}</p>
+
+          <Carrousel>
+            <div className="img">
+              {works[index].img.map((image, i) => (
+                <img key={i} src={IMAGES[image]} alt="" />
+              ))}
+            </div>
+          </Carrousel>
+
+          <div className="techno"></div>
         </section>
       </motion.div>
     );
   } else {
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 50 }}
-        exit={{ opacity: 0 }}
-      >
-        <section id="work">
-          <h1>{project} est indisponible </h1>
-        </section>
-        <Projects />
-      </motion.div>
+      <section id="work">
+        <h1>{project} est indisponible </h1>
+      </section>
     );
   }
 }

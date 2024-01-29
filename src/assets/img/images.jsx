@@ -12,5 +12,6 @@ const IMAGES = {
   tailwind: new URL("./tailwind.svg", import.meta.url).href,
   mysql: new URL("./mysql.svg", import.meta.url).href,
   grow: new URL("./grow.svg", import.meta.url).href,
+  reviens: new URL ("./page_objet_reserve 2.png", import.meta.url).href, 
 };
 export default IMAGES;
