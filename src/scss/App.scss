@@ -117,7 +117,7 @@ header {
   padding: 15px;
   padding-left: 0px;
   padding-right: 0px;
-  border-bottom: 2px solid #ff6d0a;
+  border-bottom: 2px solid $orange;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -206,7 +206,7 @@ header {
     }
   }
   h1::first-letter {
-    color: #ff6d0a;
+    color: $orange;
   }
   p {
     width: 100%;
