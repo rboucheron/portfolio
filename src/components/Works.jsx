@@ -35,16 +35,21 @@ function Works(props) {
 
           <p>{works[index].content}</p>
 
-      
-            <div className="img">
-              {works[index].img.map((image, i) => (
-                <img key={i} src={IMAGES[image]} alt="" />
-              ))}
-            </div>
-
+          <div className="img">
+            {works[index].img.map((image, i) => (
+              <img key={i} src={IMAGES[image]} alt="" />
+            ))}
+          </div>
 
           <div className="techno">
             <p>{works[index].toolsContent}</p>
+          </div>
+          <div className="website">
+            {works[index].projectLink != "" ? (
+              <a href={works[index].projectLink}>Consulter le site</a>
+            ) : (
+              <div></div>
+            )}
           </div>
         </section>
       </motion.div>

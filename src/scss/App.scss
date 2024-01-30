@@ -25,6 +25,17 @@ html {
   &.dark {
     background-color: $black;
     color: $white;
+    section#work {
+      .website {
+        a {
+          color: $black;
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+        }
+      }
+    }
     header {
       background: $black;
     }
@@ -541,6 +552,29 @@ section#work {
       text-align: left;
     }
   }
+  .website {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      margin-top: 10%;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 300px;
+      padding: 15px;
+      background-color: $orange;
+      color: white;
+      text-align: center;
+      transition-property: background, color;
+      transition-duration: 300ms;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
   .tools {
     width: 50%;
     margin: auto;
@@ -566,7 +600,6 @@ section#work {
   .img {
     @media screen and (max-width: 800px) {
       width: 90%;
-
     }
     width: 60%;
     margin: auto;
@@ -601,14 +634,14 @@ footer {
     }
   }
 }
-.cv{
+.cv {
   width: 65%;
   margin: auto;
   margin-top: 5%;
   @media screen and (max-width: 450px) {
     width: 80%;
   }
-  img{
+  img {
     width: 100%;
   }
 }
