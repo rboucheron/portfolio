@@ -16,6 +16,7 @@ function Works(props) {
   };
 
   var index = findIndexInWorks(works, project);
+  window.scrollTo(0, 0);
   if (index != -1) {
     return (
       <motion.div

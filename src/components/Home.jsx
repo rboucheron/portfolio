@@ -5,13 +5,15 @@ import Skills from "./Skills";
 import Project from "./Project";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
+window.scrollTo(0, 0);
 function Home(props) {
+
+
   return (
     <motion.div
-    initial={{opacity: 0}}
-    animate={{opacity: 50}}
-    exit={{opacity: 0}}
-
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 50 }}
+      exit={{ opacity: 0 }}
     >
       <Title />
       <About />
