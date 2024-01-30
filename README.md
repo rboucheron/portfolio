@@ -1,8 +1,35 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Portfolio React
 
-Currently, two official plugins are available:
+Bienvenue sur mon portfolio React ! Ce projet a été créé pour présenter mes compétences, projets et expériences.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table des matières
+
+
+- [Technologies utilisées](#technologies-utilisées)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+
+
+## Technologies utilisées
+
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [scss](https://sass-lang.com/)
+- [lucide-react](https://lucide.dev/icons/x)
+- [framer-motion](https://www.framer.com/motion/)
+- [emailjs](https://www.emailjs.com/)
+
+## Installation
+
+1. Cloner le repository : `git clone https://github.com/rboucheron/portfolio_`
+2. Accéder au répertoire : `cd portfolio_`
+3. Installer les dépendances : `pnpm install`
+
+## Utilisation
+
+1. Lancer l'application en mode développement : `pnpm run dev`
+2. Accéder à l'application dans votre navigateur à l'adresse [http://localhost:5173/](http://localhost:5173/)
+
+
