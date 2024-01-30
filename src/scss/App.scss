@@ -144,6 +144,28 @@ header {
       display: none;
     }
   }
+  .phonelinks {
+    display: grid;
+    grid-template-columns: repeat(2, 3rem);
+    align-content: center;
+    place-content: center;
+    gap: 0.25rem;
+    place-content: center;
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .navelement {
+      text-align: left;
+      font-size: 0.8rem;
+      color: $orange;
+      text-decoration: none;
+    }
+    @media screen and (min-width: 800px) {
+      display: none;
+    }
+  }
 }
 .title {
   margin-top: 15%;
@@ -514,7 +536,7 @@ section#work {
     color: $gris;
     font-weight: 400;
   }
-  .tools{
+  .tools {
     width: 50%;
     margin: auto;
     margin-top: 0.5%;
@@ -536,12 +558,11 @@ section#work {
       border-radius: 15px;
     }
   }
-  .img{
-    
+  .img {
     width: 60%;
     margin: auto;
     margin-top: 5%;
-    img{
+    img {
       width: 100%;
     }
   }

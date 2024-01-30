@@ -14,5 +14,6 @@ const IMAGES = {
   grow: new URL("./grow.svg", import.meta.url).href,
   reviens: new URL ("./page_objet_reserve 2.png", import.meta.url).href, 
   webdocumentaire: new URL ("./webdocumentaire.jpeg", import.meta.url).href, 
+  mcdonald: new URL ("./mcdonald.png", import.meta.url).href, 
 };
 export default IMAGES;

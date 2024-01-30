@@ -8,13 +8,13 @@
         "content" : "Reviens est un projet universitaire dont l'objectif était de créer un site web permettant aux étudiants de réserver le matériel de l'université. j'ai travaillé en équipe avec un autre étudiant qui s'est occupé de la réalisation de la maquette et du design, tandis que ma partie était le développement du site web. ", 
         "date" : "Mai 2023",
         "tools" : ["html", "css", "javascript", "php", "mysql"], 
-        "toolsContent" : "Pour la réalisation de ce projet, j'ai principalement utilisé PHP pour la partie serveur (backend) du site, j’ai aussi utilisé MySQL pour la partie base de données, permettant de stocker les informations sur le matériel et les réservations. Concernant l’interface utilisateur, j’ai employé JavaScript, HTML et CSS, le javascript permet de signaler à un utilisateur lorsqu’il commet une erreur dans le remplissage d’un formulaire."
+        "toolsContent" : "Pour la réalisation de ce projet, j'ai principalement utilisé PHP pour la partie backend et MySQL pour la base de données, permettant de stocker les informations sur le matériel et les réservations. Concernant l’interface utilisateur, j’ai utilisé JavaScript, HTML et CSS, le javascript permet de signaler à un utilisateur lorsqu’il commet une erreur dans le remplissage d’un formulaire."
     },
     {
         "id" : 2,
         "title" : "Mcdonald's Stage", 
         "link" : "mcdonalds",
-        "img" : ["Mcdonalds"],
+        "img" : ["mcdonald"],
         "content" : "J'ai effectué un stage d'une durée d'un mois au sein d'un restaurant McDonald's sur les Champs-Élysées. Pendant ce stage, j'ai réalisé un site permettant aux employés du restaurant d'effectuer des formations portant sur l'hygiène et la sécurité alimentaire. Pour l'élaboration de ce site, j'ai beaucoup utilisé JavaScript côté client. JavaScript permettait de vérifier si les réponses aux questionnaires étaient correctes. De plus, j'ai employé la technologie Ajax pour transmettre des données. Côté serveur, j'ai utilisé PHP et MySQL, ils permettaient la gestion des comptes.", 
         "date" : "Juillet 2023",
         "tools" : ["html", "css", "javascript", "php", "mysql"]
