@@ -15,5 +15,6 @@ const IMAGES = {
   reviens: new URL ("./page_objet_reserve 2.png", import.meta.url).href, 
   webdocumentaire: new URL ("./webdocumentaire.jpeg", import.meta.url).href, 
   mcdonald: new URL ("./mcdonald.png", import.meta.url).href, 
+  cv: new URL ("./CV_Raphael_Boucheron.jpg", import.meta.url).href, 
 };
 export default IMAGES;

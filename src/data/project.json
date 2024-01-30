@@ -19,7 +19,7 @@
     "id": 3,
     "title": "Webdocumentaire",
     "link": "webdocumentaire",
-    "content": "J'ai développé un Webdocumentaire sur un parc situé à Meaux.",
+    "content": "J'ai développé un webdocumentaire sur le métier d'écologue.",
     "date": "12/2023",
     "tools": ["html", "css", "javascript", "react"]
   },

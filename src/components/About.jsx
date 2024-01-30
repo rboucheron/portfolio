@@ -1,6 +1,7 @@
 import React from "react";
 import IMAGES from "../assets/img/images";
 import { Squircle } from "@squircle-js/react";
+import { Link } from "react-router-dom";
 function About(props) {
   return (
     <section id="about">
@@ -24,7 +25,7 @@ function About(props) {
             compétences dans le développement web, le design et l'audio-visuel.
           </p>
           <div className="btn">
-            <a href="">Voir mon cv</a>
+            <Link to="/cv">Voir mon cv</Link>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Home from "./Home";
 import Contact from "./Contact";
 import { AnimatePresence } from "framer-motion";
 import Works from "./Works";
+import Cv from "./Cv";
 function TheRoutes(props) {
   const location = useLocation();
   return (
@@ -15,6 +16,8 @@ function TheRoutes(props) {
         <Route path="/mcdonalds" element={<Works />} />
         <Route path="/webdocumentaire" element={<Works />} />
         <Route path="/aeroclub" element={<Works />} />
+        <Route path="/cv" element={<Cv />} />
+        
       </Routes>
     </AnimatePresence>
   );
