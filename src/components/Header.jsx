@@ -3,7 +3,6 @@ import React from "react";
 import IMAGES from "../assets/img/images";
 import ToggleMode from "./ToggleMode";
 import { HashLink as Link } from "react-router-hash-link";
-import Burguer from "./Burguer";
 
 function Header(props) {
   return (
@@ -42,7 +41,6 @@ function Header(props) {
       </div>
       <div className="phonelinks">
         <ToggleMode />
-        <Burguer />
       </div>
     </header>
   );
