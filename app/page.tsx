@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
-import Image from "next/Image";
+import Image from "next/image";
 
 export default function Home() {
   return (
