@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import { useLang } from "@/lib/store"; 
 
 const ToggleLang = () => {
-  const [isFr, setIsFr] = useState(true);
+  const { lang, updateLang } = useLang();
 
   const handleClick = () => {
-    setIsFr(!isFr);
+    const newLang = lang === "fr" ? "eng" : "fr";
+    updateLang(newLang); 
   };
 
   return (
@@ -13,13 +15,14 @@ const ToggleLang = () => {
       onClick={handleClick}
       className="grid justify-items-center cursor-pointer"
     >
-      {isFr ? (
-        <Image src="img/usa.svg" alt="frensh flag" width={22} height={22} />
+      {lang === "fr" ? (
+        <Image src="/img/usa.svg" alt="French flag" width={22} height={22} />
       ) : (
-        <Image src="img/fr.svg" alt="usa flag" width={22} height={22} />
+        <Image src="/img/fr.svg" alt="USA flag" width={22} height={22} />
       )}
     </div>
   );
 };
 
 export default ToggleLang;
+
