@@ -38,7 +38,7 @@ export const CardBadges = ({ children }: { children: React.ReactNode }) => {
 
 export const Badge = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="bg-[#ff6d09] mr-2 mb-4 py-1 px-4 text-sm rounded-full text-[#fffbf9] dark:text-[#2f2f2f]">
+    <span className="bg-[#ff6d09] mr-2 mb-2 py-1 px-4 text-sm rounded-full text-[#fffbf9] dark:text-[#2f2f2f]">
       {children}
     </span>
   );
@@ -47,14 +47,14 @@ export const Badge = ({ children }: { children: React.ReactNode }) => {
 const CardButton = ({ isHover }: { isHover: boolean }) => {
   return (
     <div
-      className={`absolute p-2 flex space-x-2 items-center justify-center text-sm rounded-xl bottom-2 right-2 ${
+      className={`absolute p-2 flex items-center justify-center text-sm rounded-xl bottom-2 right-2 ${
         isHover
           ? " w-full h-full top-0 bottom-0 right-0 left-0 bg-[#f66d0a] bg-opacity-60 text-[#fffbf9] dark:text-[#1b1b1b] "
           : "text-[#1b1b1b] dark:text-[#fffbf9]"
       }`}
     >
       <Maximize2
-        size={isHover ? 60 : 22}
+        size={isHover ? 60 : 24}
         className="transition-all duration-500 ease-in-out"
       />
     </div>

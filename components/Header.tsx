@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/img/logo.svg";
-import ToggleTheme from "./ToggleTheme";
-import ToggleLang from "./ToggleLang";
-import ProjectNav from "./ProjectNav";
-import SkillNav from "./SkillNav";
+import ToggleTheme from "./button/ToggleTheme";
+import ToggleLang from "./button/ToggleLang";
+import ProjectNav from "./nav/ProjectNav";
+import SkillNav from "./nav/SkillNav";
 import { useLang } from "@/lib/store";
 import { Menu } from "lucide-react";
 
@@ -57,7 +57,7 @@ const Header = () => {
         <div className="hidden lg:flex text-sm text-[#ff6d0a] font-normal text-center cursor-pointer">
           Contact
         </div>
-        <div className=" pl-2 flex items-center space-x-4">
+        <div className=" pl-2 flex items-center space-x-2 pr-2">
           <div className="flex lg:hidden">
             <Menu color="#ff6d0a" />
           </div>
