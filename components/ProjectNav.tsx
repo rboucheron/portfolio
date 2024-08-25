@@ -1,15 +1,17 @@
 import Image from "next/image";
+import {useLang} from "@/lib/store";
 
 const ProjectNav = () => {
-  return (
+    const {lang} = useLang(); 
+    return (
     <div className="fixed top-12 w-full h-screen bg-[#2f2f2f] bg-opacity-60 dark:bg-opacity-25 dark:bg-[#fffbf9]">
       <div
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-4 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <div className="cursor-pointer hover:bg-gray-200 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
+        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
           <h2 className="text-md font-semibold text-center cursor-pointer">
-            Web Documentaire
+          {lang === 'fr' ? "Web Documentaire" : "web documentary"}
           </h2>
           <div className="grid justify-items-center mt-2">
             <Image
@@ -21,8 +23,8 @@ const ProjectNav = () => {
           </div>
         </div>
 
-        <div className="cursor-pointer hover:bg-gray-200 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">Site Vitrine</h2>
+        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
+          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Site vitrine" : "Brochure website"}</h2>
 
           <div className="grid justify-items-center mt-2">
             <Image
@@ -33,8 +35,8 @@ const ProjectNav = () => {
             />
           </div>
         </div>
-        <div className="cursor-pointer hover:bg-gray-200 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">Application Web</h2>
+        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
+          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Application Web" : "Web Application"}</h2>
           <div className="grid justify-items-center mt-2 ">
             <Image
               src="/img/logo_sae401.png"
@@ -46,8 +48,8 @@ const ProjectNav = () => {
           </div>
         </div>
 
-        <div className="cursor-pointer hover:bg-gray-200 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">Site Web 3D</h2>
+        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
+          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Site Web 3D" : "3D website"}</h2>
           <div className="grid justify-items-center mt-2">
             <Image
               src="/img/logo_sae402.png"

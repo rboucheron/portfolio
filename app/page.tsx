@@ -21,8 +21,9 @@ export default function Home() {
           <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
             A Propos
           </h2>
-          <div className="w-11/12 m-auto flex flew-wrap">
-            <div className="w-1/5">
+          <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap">
+            <div className="w-3/4 2xl:w-1/6 m-auto lg:w-1/5">
+
               <Image
                 src="/img/YAL_0083.jpg"
                 alt="Raphaël Boucheron"
@@ -51,7 +52,7 @@ export default function Home() {
           <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
             Mes Projets
           </h2>
-          <div className=" m-auto mt-10 w-3/4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
+          <div className=" m-auto mt-10 w-3/4 2xl:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
             <Card>
               <CardH1>Webdocumentaire</CardH1>
               <CardP>
