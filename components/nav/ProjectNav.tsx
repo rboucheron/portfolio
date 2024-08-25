@@ -1,65 +1,57 @@
 import Image from "next/image";
-import {useLang} from "@/lib/store";
+import { useLang } from "@/lib/store";
+import { ReactNode, useState } from "react";
+import ProjectButton from "./ProjectButton";
 
 const ProjectNav = () => {
-    const {lang} = useLang(); 
-    return (
+  const { lang } = useLang();
+  return (
     <div className="fixed top-12 w-full h-screen bg-[#2f2f2f] bg-opacity-60 dark:bg-opacity-25 dark:bg-[#fffbf9]">
       <div
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-4 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center cursor-pointer">
-          {lang === 'fr' ? "Web Documentaire" : "web documentary"}
-          </h2>
-          <div className="grid justify-items-center mt-2">
-            <Image
-              src="/img/logo_sae302.svg"
-              alt="logo l écho des écologues"
-              width={100}
-              height={100}
-            />
-          </div>
-        </div>
+        <ProjectButton
+          title={lang === "fr" ? "Web Documentaire" : "web documentary"}
+        >
+          <Image
+            src="/img/logo_sae302.svg"
+            alt="logo l écho des écologues"
+            width={100}
+            height={100}
+          />
+        </ProjectButton>
 
-        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Site vitrine" : "Brochure website"}</h2>
-
-          <div className="grid justify-items-center mt-2">
-            <Image
-              src="/img/logo_sae303.png"
-              alt="ac2fl"
-              width={80}
-              height={80}
-            />
-          </div>
-        </div>
-        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Application Web" : "Web Application"}</h2>
-          <div className="grid justify-items-center mt-2 ">
-            <Image
-              src="/img/logo_sae401.png"
-              alt="Sushy House"
-              width={80}
-              height={80}
-              className="bg-[#2f2f2f] p-2 rounded-md"
-            />
-          </div>
-        </div>
-
-        <div className="cursor-pointer hover:bg-[#f66d0a] hover:bg-opacity-60 rounded-sm p-2 transition delay-150 duration-300 ease-in-out">
-          <h2 className="text-md font-semibold text-center">{lang === 'fr' ? "Site Web 3D" : "3D website"}</h2>
-          <div className="grid justify-items-center mt-2">
-            <Image
-              src="/img/logo_sae402.png"
-              alt="Le buggy"
-              width={80}
-              height={80}
-              className="bg-[#fffbf9] p-2 rounded-md"
-            />
-          </div>
-        </div>
+        <ProjectButton
+          title={lang === "fr" ? "Site vitrine" : "Brochure website"}
+        >
+          <Image
+            src="/img/logo_sae303.png"
+            alt="ac2fl"
+            width={80}
+            height={80}
+          />
+        </ProjectButton>
+        <ProjectButton
+          title={lang === "fr" ? "Application Web" : "Web Application"}
+        >
+          <Image
+            src="/img/logo_sae401.png"
+            alt="Sushy House"
+            width={80}
+            height={80}
+            className="bg-[#2f2f2f] p-2 rounded-md"
+          />
+        </ProjectButton>
+        <ProjectButton title={lang === "fr" ? "Site Web 3D" : "3D website"}>
+          <Image
+            src="/img/logo_sae402.png"
+            alt="Le buggy"
+            width={80}
+            height={80}
+            className="bg-[#fffbf9] p-2 rounded-md"
+          />
+        </ProjectButton>
       </div>
     </div>
   );
