@@ -57,7 +57,7 @@ const Header = () => {
         <div className="hidden lg:flex text-sm text-[#ff6d0a] font-normal text-center cursor-pointer">
           Contact
         </div>
-        <div className=" pl-2 flex items-center space-x-2 pr-2">
+        <div className="pl-2 flex items-center space-x-2 sm:pr-2 ">
           <div className="flex lg:hidden">
             <Menu color="#ff6d0a" />
           </div>

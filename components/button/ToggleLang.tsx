@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { useLang } from "@/lib/store";
 
 const ToggleLang = () => {
@@ -23,7 +22,7 @@ const ToggleLang = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_6_10559)">
+          <g clipPath="url(#clip0_6_10559)">
             <path
               d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
               fill="#F0F0F0"
@@ -63,7 +62,7 @@ const ToggleLang = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_6_9894)">
+          <g clipPath="url(#clip0_6_9894)">
             <path
               d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
               fill="#F0F0F0"

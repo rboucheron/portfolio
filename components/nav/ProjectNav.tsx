@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useLang } from "@/lib/store";
 import { ReactNode, useState } from "react";
-import ProjectButton from "./ProjectButton";
+import NavButton from "./NavButton";
 
 const ProjectNav = () => {
   const { lang } = useLang();
@@ -11,7 +11,7 @@ const ProjectNav = () => {
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-4 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <ProjectButton
+        <NavButton
           title={lang === "fr" ? "Web Documentaire" : "web documentary"}
         >
           <Image
@@ -20,19 +20,17 @@ const ProjectNav = () => {
             width={100}
             height={100}
           />
-        </ProjectButton>
+        </NavButton>
 
-        <ProjectButton
-          title={lang === "fr" ? "Site vitrine" : "Brochure website"}
-        >
+        <NavButton title={lang === "fr" ? "Site vitrine" : "Brochure website"}>
           <Image
             src="/img/logo_sae303.png"
             alt="ac2fl"
             width={80}
             height={80}
           />
-        </ProjectButton>
-        <ProjectButton
+        </NavButton>
+        <NavButton
           title={lang === "fr" ? "Application Web" : "Web Application"}
         >
           <Image
@@ -42,8 +40,8 @@ const ProjectNav = () => {
             height={80}
             className="bg-[#2f2f2f] p-2 rounded-md"
           />
-        </ProjectButton>
-        <ProjectButton title={lang === "fr" ? "Site Web 3D" : "3D website"}>
+        </NavButton>
+        <NavButton title={lang === "fr" ? "Site Web 3D" : "3D website"}>
           <Image
             src="/img/logo_sae402.png"
             alt="Le buggy"
@@ -51,7 +49,7 @@ const ProjectNav = () => {
             height={80}
             className="bg-[#fffbf9] p-2 rounded-md"
           />
-        </ProjectButton>
+        </NavButton>
       </div>
     </div>
   );
