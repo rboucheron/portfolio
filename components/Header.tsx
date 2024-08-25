@@ -36,7 +36,8 @@ const Header = () => {
         <Image src={Logo} alt="Logo du portfolio " className="w-full" />
       </div>
       <div
-        className="grid place-items-center lg:grid-cols-5 h-full gap-y-4 xl:gap-y-0.5 w-1/2 sm:w-1/4 lg:w-2/3 ml-auto pt-2  pb-2 mr-8 sm:mr-0"
+        className="grid place-items-center lg:grid-cols-5 h-full gap-y-4 xl:gap-y-0.5 w-1/2 sm:w-1/4 lg:w-2/3 ml-auto pt-2  pb-2  sm:mr-0"
+        
         onMouseOver={(e) => e.stopPropagation()}
       >
         <div className="hidden lg:flex text-sm text-[#ff6d0a] font-normal text-center cursor-pointer">
@@ -57,12 +58,12 @@ const Header = () => {
         <div className="hidden lg:flex text-sm text-[#ff6d0a] font-normal text-center cursor-pointer">
           Contact
         </div>
-        <div className="pl-2 flex items-center space-x-2 sm:pr-2 ">
-          <div className="flex lg:hidden">
-            <Menu color="#ff6d0a" />
-          </div>
+        <div className="sm:pl-2 flex items-center space-x-2 sm:pr-2 ">
           <ToggleTheme />
           <ToggleLang />
+          <div className="flex lg:hidden cursor-pointer">
+            <Menu color="#ff6d0a" />
+          </div>
         </div>
       </div>
       <div>{isOpenProject ? <ProjectNav /> : ""}</div>

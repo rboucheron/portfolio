@@ -10,7 +10,7 @@ export const Card = ({ children }: { children: React.ReactNode }) => {
     <div
       className="bg-[#fffbf9] cursor-pointer rounded-2xl  shadow-gray-300 dark:shadow-transparent shadow-2xl p-4 flex flex-col dark:bg-[#1b1b1b] relative"
       onMouseOver={() => setIsHover(true)}
-      onMouseOut={() => setIsHover(false)} // Reset state on mouse out
+      onMouseOut={() => setIsHover(false)}
     >
       {children}
       <CardButton isHover={isHover} />
