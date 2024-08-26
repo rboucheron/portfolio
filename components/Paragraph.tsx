@@ -1,9 +1,8 @@
+"use client";
 import { ReactNode, useState } from "react";
-import { useLang } from "@/lib/store";
-
+import { Lang, Eng, Fr } from "@/components/Lang";
 
 const Paragraph = ({ children }: { children: ReactNode }) => {
-  const { lang } = useLang();
   const [readMore, setReadMore] = useState<boolean>(false);
   return (
     <>
@@ -13,10 +12,20 @@ const Paragraph = ({ children }: { children: ReactNode }) => {
         {children}
       </p>
       <div
-        className="ml-8 font-normal text-sm text-[#f66d0a]"
+        className="ml-8 font-normal text-sm text-[#f66d0a] cursor-pointer"
         onClick={() => setReadMore(!readMore)}
       >
-        {lang === "fr" ? "Lire Plus" : "Read More"}{" "}
+        {readMore ? (
+          <Lang>
+            <Eng>Read Less</Eng>
+            <Fr>Lire Moins</Fr>
+          </Lang>
+        ) : (
+          <Lang>
+            <Eng>Read More</Eng>
+            <Fr>Lire Plus</Fr>
+          </Lang>
+        )}
       </div>
     </>
   );

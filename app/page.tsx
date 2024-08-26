@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
+import { Lang, Eng, Fr } from "@/components/Lang";
 
 export default function Home() {
   return (
@@ -13,15 +14,26 @@ export default function Home() {
           <h1 className="text-center w-full text-6xl text-gray-900 font-bold dark:text-[#fffbf9]">
             Raphaël Boucheron
           </h1>
-          <p className="w-full text-center text-sm mt-2">
-            {" "}
-            Développeur fullstack chez SNCF Voyageur, étudient en BUT MMI{" "}
+          <p className="w-3/4 text-center text-sm m-auto mt-2">
+            <Lang>
+              <Eng>
+                Full-stack Developer at SNCF Voyageur, student in a Bachelor's
+                in Multimedia and Internet Technology{" "}
+              </Eng>
+              <Fr>
+                {" "}
+                Développeur fullstack chez SNCF Voyageur, étudient en BUT MMI
+              </Fr>
+            </Lang>
           </p>
         </div>
 
         <div className="mt-72">
           <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
-            A Propos
+            <Lang>
+              <Fr>A Propos</Fr>
+              <Eng>About</Eng>
+            </Lang>
           </h2>
           <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap">
             <div className="w-1/2 2xl:w-1/6 m-auto lg:w-1/5 sm:w-1/3 mt-4 lg:mt-auto">
@@ -35,30 +47,62 @@ export default function Home() {
             </div>
             <div className="w-11/12 lg:w-4/5 m-auto mt-8 lg:mt-0">
               <p className="hidden lg:block text-md font-light ml-8 ">
-                Depuis toujours, je suis passionné par l'informatique, qui est
-                pour moi à la fois un outil de travail, de communication et de
-                divertissement. J'ai commencé mon parcours en réalisant des
-                projets avec des cartes électroniques Arduino puis en intégrant
-                des sites web en HTML, CSS et JavaScript. Après l’obtention d’un
-                BAC sciences et technologie de l’industrie et du développement
-                durable, je poursuis mes études en BUT métiers du multimédia et
-                de l’internet pour devenir développeur Full Stack. J'apprends et
-                j'acquiers des compétences dans le développement web, le design
-                et l'audio-visuel.
+                <Lang>
+                  <Fr>
+                    Depuis toujours, je suis passionné par l'informatique, qui
+                    est pour moi à la fois un outil de travail, de communication
+                    et de divertissement. J'ai commencé mon parcours en
+                    réalisant des projets avec des cartes électroniques Arduino
+                    puis en intégrant des sites web en HTML, CSS et JavaScript.
+                    Après l’obtention d’un BAC sciences et technologie de
+                    l’industrie et du développement durable, je poursuis mes
+                    études en BUT métiers du multimédia et de l’internet pour
+                    devenir développeur Full Stack. J'apprends et j'acquiers des
+                    compétences dans le développement web, le design et
+                    l'audio-visuel.
+                  </Fr>
+                  <Eng>
+                    I have always been passionate about computers, which are for
+                    me a tool for work, communication and entertainment. I
+                    started my career by carrying out projects with Arduino
+                    electronic cards and then by integrating websites in HTML,
+                    CSS and JavaScript. After obtaining a BAC in science and
+                    technology of industry and sustainable development, I
+                    continued my studies in BUT multimedia and internet
+                    professions to become a Full Stack developer. I learn and
+                    acquire skills in web development, design and audio-visual.
+                  </Eng>
+                </Lang>
               </p>
               <div className="xl:hidden">
                 <Paragraph>
-                  Depuis toujours, je suis passionné par l'informatique, qui est
-                  pour moi à la fois un outil de travail, de communication et de
-                  divertissement. J'ai commencé mon parcours en réalisant des
-                  projets avec des cartes électroniques Arduino puis en
-                  intégrant des sites web en HTML, CSS et JavaScript. Après
-                  l’obtention d’un BAC sciences et technologie de l’industrie et
-                  du développement durable, je poursuis mes études en BUT
-                  métiers du multimédia et de l’internet pour devenir
-                  développeur Full Stack. J'apprends et j'acquiers des
-                  compétences dans le développement web, le design et
-                  l'audio-visuel.
+                  <Lang>
+                    <Fr>
+                      Depuis toujours, je suis passionné par l'informatique, qui
+                      est pour moi à la fois un outil de travail, de
+                      communication et de divertissement. J'ai commencé mon
+                      parcours en réalisant des projets avec des cartes
+                      électroniques Arduino puis en intégrant des sites web en
+                      HTML, CSS et JavaScript. Après l’obtention d’un BAC
+                      sciences et technologie de l’industrie et du développement
+                      durable, je poursuis mes études en BUT métiers du
+                      multimédia et de l’internet pour devenir développeur Full
+                      Stack. J'apprends et j'acquiers des compétences dans le
+                      développement web, le design et l'audio-visuel.
+                    </Fr>
+                    <Eng>
+                      I have always been passionate about computers, which are
+                      for me a tool for work, communication and entertainment. I
+                      started my career by carrying out projects with Arduino
+                      electronic cards and then by integrating websites in HTML,
+                      CSS and JavaScript. After obtaining a BAC in science and
+                      technology of industry and sustainable development, I
+                      continued my studies in BUT multimedia and internet
+                      professions to become a Full Stack developer. I learn and
+                      acquire skills in web development, design and
+                      audio-visual.
+                    </Eng>
+                  </Lang>
                 </Paragraph>
               </div>
             </div>

@@ -13,8 +13,8 @@ const SkillNav = () => {
           <Image
             src="/img/Figma-logo.png"
             alt="logo de figma"
-            width={30}
-            height={30}
+            width={40}
+            height={40}
           />
         </NavButton>
         <NavButton
@@ -25,8 +25,8 @@ const SkillNav = () => {
           <Image
             src="/img/React_Logo_SVG.png"
             alt="logo React"
-            width={50}
-            height={50}
+            width={60}
+            height={60}
           />
         </NavButton>
         <NavButton
@@ -37,8 +37,8 @@ const SkillNav = () => {
           <Image
             src="/img/PHP-logo.png"
             alt="logo Php"
-            width={50}
-            height={50}
+            width={60}
+            height={60}
           />
         </NavButton>
       </div>
