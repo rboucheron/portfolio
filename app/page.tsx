@@ -1,6 +1,8 @@
+"use client"
 import Header from "@/components/Header";
 import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
 import Image from "next/image";
+import Paragraph from "@/components/Paragraph";
 
 export default function Home() {
   return (
@@ -22,18 +24,17 @@ export default function Home() {
             A Propos
           </h2>
           <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap">
-            <div className="w-3/4 2xl:w-1/6 m-auto lg:w-1/5">
-
+            <div className="w-1/2 2xl:w-1/6 m-auto lg:w-1/5 sm:w-1/3 mt-4 lg:mt-auto">
               <Image
                 src="/img/YAL_0083.jpg"
                 alt="Raphaël Boucheron"
                 width={100}
                 height={100}
-                className="w-full rounded-xl "
+                className="w-full rounded-sm  sm:rounded-xl "
               />
             </div>
-            <div className="w-4/5 m-auto">
-              <p className="text-md font-light ml-8">
+            <div className="w-11/12 lg:w-4/5 m-auto mt-8 lg:mt-0">
+              <p className="hidden lg:block text-md font-light ml-8 ">
                 Depuis toujours, je suis passionné par l'informatique, qui est
                 pour moi à la fois un outil de travail, de communication et de
                 divertissement. J'ai commencé mon parcours en réalisant des
@@ -45,6 +46,21 @@ export default function Home() {
                 j'acquiers des compétences dans le développement web, le design
                 et l'audio-visuel.
               </p>
+              <div className="xl:hidden">
+                <Paragraph>
+                  Depuis toujours, je suis passionné par l'informatique, qui est
+                  pour moi à la fois un outil de travail, de communication et de
+                  divertissement. J'ai commencé mon parcours en réalisant des
+                  projets avec des cartes électroniques Arduino puis en
+                  intégrant des sites web en HTML, CSS et JavaScript. Après
+                  l’obtention d’un BAC sciences et technologie de l’industrie et
+                  du développement durable, je poursuis mes études en BUT
+                  métiers du multimédia et de l’internet pour devenir
+                  développeur Full Stack. J'apprends et j'acquiers des
+                  compétences dans le développement web, le design et
+                  l'audio-visuel.
+                </Paragraph>
+              </div>
             </div>
           </div>
         </div>
