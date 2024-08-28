@@ -5,6 +5,7 @@ import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Lang, Eng, Fr } from "@/components/Lang";
 
+
 export default function Home() {
   return (
     <>
@@ -190,6 +191,7 @@ export default function Home() {
             </Card>
           </div>
         </div>
+
       </main>
     </>
   );

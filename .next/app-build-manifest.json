@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/admin/profil/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/admin/profil/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
