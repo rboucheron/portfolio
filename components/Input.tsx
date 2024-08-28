@@ -27,7 +27,7 @@ const Input = ({
         {label}
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline shadow-[#ff6d0a]"
+        className="border border-[#343a40] appearance-none border rounded w-full py-2 px-3 text-gray-700  leading-tight focus:outline-none "
         id={label}
         type={type}
         placeholder={placeHolder}

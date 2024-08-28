@@ -1,5 +1,5 @@
-"use client";
-import { useMemo, useState } from "react";
+'use client'
+import { useMemo, useState, useEffect } from "react";
 import Popups, {
   BodyPopups,
   HeaderPopups,
@@ -11,25 +11,43 @@ import {
   useMaterialReactTable,
   type MRT_ColumnDef,
 } from "material-react-table";
-import { Result } from "postcss";
+import AdminHeader from "@/components/AdminHeader";
 
-//example data type
 type Person = {
   id: number;
   email: string;
   name: string;
 };
 
-const data: Person[] = [
-  {
-    id: 12345,
-    name: "raphael boucheron",
-    email: "raphaelboucheron3@gmail.com",
-  },
-];
-
 const Profil = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [adminData, setAdminData] = useState<Person[] | null>(null);
+
+  useEffect(() => {
+    fetchAdmin();
+  }, []);
+
+  const fetchAdmin = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/admin/get", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setAdminData(data.admins);
+      } else {
+        const errorData = await response.json();
+        console.log(errorData);
+      }
+    } catch (error) {
+      console.log("Erreur :", error);
+    }
+  };
+
   const columns = useMemo<MRT_ColumnDef<Person>[]>(
     () => [
       {
@@ -53,22 +71,26 @@ const Profil = () => {
 
   const table = useMaterialReactTable({
     columns,
-    data,
+    data: adminData !== null ? adminData : [],
   });
 
   return (
-    <div className="m-4">
-      {isOpen && <AddAdmin />}
-      <button
-        className="bg-sky-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
-        onClick={() => setIsOpen(true)}
-      >
-        Add Profil
-      </button>
-      <MaterialReactTable table={table} />
-    </div>
+    <>
+      <AdminHeader />
+      <div className="m-4">
+        {isOpen && <AddAdmin />}
+        <button
+          className="bg-sky-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
+          onClick={() => setIsOpen(true)}
+        >
+          Add Profil
+        </button>
+        <MaterialReactTable table={table} />
+      </div>
+    </>
   );
 };
+
 
 const AddAdmin: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -76,9 +98,7 @@ const AddAdmin: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     try {
       const response = await fetch("http://localhost:3000/api/admin/add", {
         method: "POST",
@@ -89,7 +109,6 @@ const AddAdmin: React.FC = () => {
       });
 
       if (response.ok) {
-        const data = await response.json();
         setMessage("Admin ajouté avec succès!");
         setName("");
         setEmail("");
@@ -139,12 +158,12 @@ const AddAdmin: React.FC = () => {
         >
           Annuler
         </button>
-        <button
-        onClick={() => handleSubmit}
+        <div
+          onClick={handleSubmit} // <-- ici, il faut appeler directement la fonction
           className="bg-green-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
         >
           Valider
-        </button>
+        </div>
       </FooterPopups>
     </Popups>
   );
