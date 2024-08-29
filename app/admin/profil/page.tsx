@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useMemo, useState, useEffect } from "react";
 import Popups, {
   BodyPopups,
@@ -6,6 +6,14 @@ import Popups, {
   FooterPopups,
 } from "@/components/Poppup";
 import Input from "@/components/Input";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import {
   MaterialReactTable,
   useMaterialReactTable,
@@ -29,7 +37,7 @@ const Profil = () => {
 
   const fetchAdmin = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/admin/get", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/get`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +74,7 @@ const Profil = () => {
         size: 150,
       },
     ],
-    []
+    [],
   );
 
   const table = useMaterialReactTable({
@@ -76,23 +84,40 @@ const Profil = () => {
 
   return (
     <>
+      {isOpen && <AddAdmin isOpen={(isOpen: boolean) => setIsOpen(isOpen)} />}
       <AdminHeader />
       <div className="m-4">
-        {isOpen && <AddAdmin />}
-        <button
-          className="bg-sky-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
-          onClick={() => setIsOpen(true)}
-        >
-          Add Profil
-        </button>
+        <div className="flex justify-between  items-center ">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="/">Admin</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Profil</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
+          <button
+            className="bg-sky-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
+            onClick={() => setIsOpen(true)}
+          >
+            Add Profil
+          </button>
+        </div>
         <MaterialReactTable table={table} />
       </div>
     </>
   );
 };
 
-
-const AddAdmin: React.FC = () => {
+const AddAdmin = ({ isOpen }: { isOpen: (isOpen: boolean) => void }) => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -100,7 +125,7 @@ const AddAdmin: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/admin/add", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -113,6 +138,7 @@ const AddAdmin: React.FC = () => {
         setName("");
         setEmail("");
         setPassword("");
+        isOpen(false);
       } else {
         const errorData = await response.json();
         setMessage(`Erreur: ${errorData.error}`);
@@ -154,7 +180,7 @@ const AddAdmin: React.FC = () => {
         <button
           type="button"
           className="bg-red-400 p-2 rounded-md text-sm text-white mb-4 mt-4 hover:bg-sky-800"
-          onClick={() => setMessage(null)}
+          onClick={() => isOpen(false)}
         >
           Annuler
         </button>
