@@ -1,12 +1,43 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Lang, Eng, Fr } from "@/components/Lang";
-
+import { useEffect, useState } from "react";
+import { Iproject } from "@/interface/Iproject";
 
 export default function Home() {
+  const [projects, setProjects] = useState<Iproject[] | null>(null);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  const fetchProjects = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/project`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        setProjects(data.projects);
+      } else {
+        const errorData = await response.json();
+        console.log(errorData);
+      }
+    } catch (error) {
+      console.log("Erreur :", error);
+    }
+  };
+
   return (
     <>
       <main>
@@ -75,7 +106,7 @@ export default function Home() {
                   </Eng>
                 </Lang>
               </p>
-              <div className="xl:hidden">
+              <div className="lg:hidden">
                 <Paragraph>
                   <Lang>
                     <Fr>
@@ -114,6 +145,19 @@ export default function Home() {
             Mes Projets
           </h2>
           <div className=" m-auto mt-10 w-3/4 2xl:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
+            {projects !== null &&
+              projects.map((project) => (
+                <Card key={project.id}>
+                  <CardH1>{project.title}</CardH1>
+                  <CardP>{project.details}</CardP>{" "}
+                  <CardBadges>
+                    {project.technologies.map((technology) => (
+                      <Badge key={technology.id}>{technology.name}</Badge>
+                    ))}
+                  </CardBadges>
+                </Card>
+              ))}
+
             <Card>
               <CardH1>Webdocumentaire</CardH1>
               <CardP>
@@ -191,7 +235,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-
       </main>
     </>
   );

@@ -22,13 +22,29 @@ model Administrator {
 }
 
 model Project {
-  id       Int      @id @default(autoincrement())
-  title    String
-  image    String
-  details  String
-  date     DateTime
-  category String
-  link     String
+  id           Int            @id @default(autoincrement())
+  title        String
+  details      String
+  date         DateTime
+  category     String
+  link         String
+  github       String
+  images       Images[]
+  technologies Technologies[]
+}
+
+model Technologies {
+  id       Int       @id @default(autoincrement())
+  name     String
+  projects Project[]
+}
+
+model Images {
+  id        Int     @id @default(autoincrement())
+  src       String
+  alt       String
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId Int
 }
 
 model Message {
