@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 const saltRounds = 10;
 
 async function hashPassword(password: string): Promise<string> {
@@ -12,5 +12,4 @@ async function verifyPassword(
   return await bcrypt.compare(plainTextValue, existingHash);
 }
 
-export default hashPassword;
-export { verifyPassword };
+export {hashPassword, verifyPassword };

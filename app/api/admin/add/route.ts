@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
-
+import { hashPassword} from "@/lib/hash_password";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -19,7 +18,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = await hashPassword(password);
 
   const newAdmin = await prisma.administrator.create({
     data: {

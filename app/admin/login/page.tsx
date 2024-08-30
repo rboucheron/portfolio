@@ -20,11 +20,12 @@ function page() {
 
       if (response.ok) {
         const data = await response.json(); 
-        
+        localStorage.setItem('admin', JSON.stringify(data))
         setEmail("");
         setPassword("");
       } else {
         const errorData = await response.json();
+        console.log(errorData)
       }
     } catch (error) {}
   };

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+import { verifyPassword } from '@/lib/hash_password';
+import generateToken from '@/lib/generate_token';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -17,14 +17,16 @@ export async function POST(req: Request) {
   }
 
 
-  const isPasswordValid = await bcrypt.compare(password, admin.password);
+  const isPasswordValid = await verifyPassword(admin.password, password);
 
   if (!isPasswordValid) {
     return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
   }
 
 
-  const token = jwt.sign({ id: admin.id, email: admin.email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+  const token = generateToken();
+  const name = admin.name;
+  
 
 
   await prisma.administrator.update({
@@ -32,5 +34,5 @@ export async function POST(req: Request) {
     data: { token },
   });
 
-  return NextResponse.json({ token }, { status: 200 });
+  return NextResponse.json({ token, name, email }, { status: 200 });
 }
