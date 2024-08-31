@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useLang } from "@/lib/store";
 import NavButton from "./NavButton";
 import { ScrollText } from "lucide-react";
+import { IoMdPaper } from "react-icons/io";
 
 const AboutNav = () => {
   const { lang } = useLang();
@@ -17,10 +18,11 @@ const AboutNav = () => {
             alt="logo de github"
             width={60}
             height={60}
+         
           />
         </NavButton>
         <NavButton title={lang === "fr" ? "Mon Cv" : "My Resume"}>
-          <ScrollText size={60} />
+          <IoMdPaper size={60} />
         </NavButton>
       </div>
     </div>

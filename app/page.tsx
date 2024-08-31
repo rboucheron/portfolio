@@ -6,6 +6,8 @@ import Paragraph from "@/components/Paragraph";
 import { Lang, Eng, Fr } from "@/components/Lang";
 import { useEffect, useState } from "react";
 import { Iproject } from "@/interface/Iproject";
+import Skills from "@/components/Skills";
+import Link from "next/link";
 
 export default function Home() {
   const [projects, setProjects] = useState<Iproject[] | null>(null);
@@ -67,7 +69,7 @@ export default function Home() {
               <Eng>About</Eng>
             </Lang>
           </h2>
-          <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap">
+          <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap mt-10">
             <div className="w-1/2 2xl:w-1/6 m-auto lg:w-1/5 sm:w-1/3 mt-4 lg:mt-auto">
               <Image
                 src="/img/YAL_0083.jpg"
@@ -142,20 +144,31 @@ export default function Home() {
         </div>
         <div className="mt-64">
           <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
+            <Lang>
+              <Fr>Compétences</Fr>
+              <Eng>Skills</Eng>
+            </Lang>
+          </h2>
+          <Skills />
+        </div>
+        <div className="mt-64">
+          <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
             Mes Projets
           </h2>
           <div className=" m-auto mt-10 w-3/4 2xl:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
             {projects !== null &&
               projects.map((project) => (
-                <Card key={project.id}>
-                  <CardH1>{project.title}</CardH1>
-                  <CardP>{project.details}</CardP>{" "}
-                  <CardBadges>
-                    {project.technologies.map((technology) => (
-                      <Badge key={technology.id}>{technology.name}</Badge>
-                    ))}
-                  </CardBadges>
-                </Card>
+                <Link href={`/project/${project.id}`} key={project.id}>
+                  <Card>
+                    <CardH1>{project.title}</CardH1>
+                    <CardP>{project.details}</CardP>{" "}
+                    <CardBadges>
+                      {project.technologies.map((technology) => (
+                        <Badge key={technology.id}>{technology.name}</Badge>
+                      ))}
+                    </CardBadges>
+                  </Card>
+                </Link>
               ))}
 
             <Card>
