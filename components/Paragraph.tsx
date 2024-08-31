@@ -7,12 +7,12 @@ const Paragraph = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <p
-        className={`text-md font-light ${readMore ? "" : "line-clamp-3"} ml-8 `}
+        className={`text-md font-light ${readMore ? "" : "line-clamp-3"}  `}
       >
         {children}
       </p>
       <div
-        className="ml-8 font-normal text-sm text-[#f66d0a] cursor-pointer"
+        className="font-normal text-sm text-[#f66d0a] cursor-pointer"
         onClick={() => setReadMore(!readMore)}
       >
         {readMore ? (
