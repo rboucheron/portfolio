@@ -16,8 +16,13 @@ const Footer = () => {
           <FaCodepen size={35} />
         </div>
       </div>
-      <div className="mt-4 w-full text-center text-md font-extralight text-white dark:text-black">Mentions Légales</div>
-      <div className="mt-4 w-full text-center text-md font-extralight text-white dark:text-black ">Un projet de Raphaël Boucheron - © 2024 Portfolio - Tous droits Réservés. </div>
+      <div className="mt-4 w-full text-center text-md font-extralight text-white dark:text-black">
+        Mentions Légales
+      </div>
+      <div className="mt-4 w-full text-center text-md font-extralight text-white dark:text-black ">
+        Un projet de Raphaël Boucheron - © 2024 Portfolio - Tous droits
+        Réservés.{" "}
+      </div>
     </footer>
   );
 };
