@@ -1,4 +1,3 @@
 {
-  "/api/project/route": "app/api/project/route.js",
   "/api/project/[id]/route": "app/api/project/[id]/route.js"
 }
