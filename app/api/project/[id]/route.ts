@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { Prisma } from "@/lib/prisma"
 
-const prisma = new PrismaClient();
+
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   const { id } = params;
 
   try {
-    const project = await prisma.project.findUnique({
+    const project = await Prisma.project.findUnique({
       where: { id: Number(id) }, 
       include: {
         images: true,

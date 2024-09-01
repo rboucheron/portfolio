@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { Prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
+
 
 export async function GET(req: NextRequest) {
   try {
-    const projects = await prisma.project.findMany({
+    const projects = await Prisma.project.findMany({
       include: {
         images: true,
         technologies: true,
