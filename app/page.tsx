@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Iproject } from "@/interface/Iproject";
 import Skills from "@/components/Skills";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [projects, setProjects] = useState<Iproject[] | null>(null);
@@ -248,6 +249,7 @@ export default function Home() {
             </Card>
           </div>
         </div>
+   < Footer />
       </main>
     </>
   );

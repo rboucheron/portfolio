@@ -8,6 +8,7 @@ export interface Iproject {
     date: string;
     link: string; 
     github: string; 
+    category: string; 
     images: Iimage[]
     technologies: Itechnologie[]
 
