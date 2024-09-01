@@ -72,10 +72,10 @@ function page() {
 
   return (
     <>
-      <Header />
+
       {project !== null ? (
         <div className=" w-11/12  m-auto ">
-          <div className="mt-2 flex flex-row items-center justify-between pt-2 pb-2">
+          <div className="mt-2 flex flex-col lg:flex-row items-center justify-between pt-2 pb-2">
             <div>
               <Breadcrumb>
                 <BreadcrumbList>
@@ -102,11 +102,11 @@ function page() {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
-            <h1 className="font-semibold text-2xl  mb-4 mt-4">
+            <h1 className=" mt-10 font-semibold text-2xl  mb-4 lg:mt-4">
               {project.title}
             </h1>
           </div>
-          <div className="grid grid-cols-4 gap-4 mt-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4  lg:mt-5">
             <div className="p-4 flex flex-col items-center">
               <BsCalendarDateFill className="text-xl" />
               <div className="font-medium text-center text-md mt-4">
@@ -134,7 +134,7 @@ function page() {
               </Button>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 w-full mt-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mt-5">
             <div>
               <Image
                 src={`/img/${project.images[0].src}`}
@@ -166,7 +166,7 @@ function page() {
         </div>
         
       ) : (
-        <div className="mt-28 flex justify-center w-full ">
+        <div className="my-80 flex justify-center w-full ">
           <CircularProgress disableShrink />
         </div>
       )}

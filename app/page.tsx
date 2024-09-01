@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Iproject } from "@/interface/Iproject";
 import Skills from "@/components/Skills";
 import Link from "next/link";
-
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [projects, setProjects] = useState<Iproject[] | null>(null);
@@ -44,7 +44,6 @@ export default function Home() {
   return (
     <>
       <main>
-        <Header />
         <div className=" mt-48">
           <h1 className="text-center w-full text-6xl text-gray-900 font-bold dark:text-[#fffbf9]">
             Raphaël Boucheron
@@ -249,7 +248,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-
       </main>
     </>
   );
