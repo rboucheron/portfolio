@@ -28,7 +28,7 @@ import { Eng, Fr, Lang } from "@/components/Lang";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Iproject } from "@/interface/Iproject";
-import Footer from "@/components/Footer";
+
 
 function page() {
   const [id, setId] = useState<string | null>(null);
@@ -170,7 +170,7 @@ function page() {
           <CircularProgress disableShrink />
         </div>
       )}
-      < Footer />
+
     </>
   );
 }
