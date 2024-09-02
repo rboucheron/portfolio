@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/lib/store";
+
 
 const ToggleTheme = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const { theme, updateTheme } = useTheme();
 
   const handleClick = () => {
-    setIsDarkTheme(!isDarkTheme);
-    document.documentElement.classList.toggle("dark");
+    const newTheme = theme === "dark" ? "clear" : "dark";
+    updateTheme(newTheme);
   };
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   return (
     <div
       onClick={handleClick}
       className="grid justify-items-center cursor-pointer"
     >
-      {isDarkTheme ? <Sun color="#ff6d0a" /> : <Moon color="#ff6d0a" />}
+      {theme === "dark" ? <Moon color="#ff6d0a" /> : <Sun color="#ff6d0a" />}
     </div>
   );
 };
