@@ -1,5 +1,7 @@
+"use client";
 import Accordion from "../Accordion";
-import { useLang } from "@/lib/store";
+import { useScopedI18n } from "@/locales/client";
+
 const BurguerNav = ({
   isOpen,
   setIsOpen,
@@ -7,7 +9,8 @@ const BurguerNav = ({
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
 }) => {
-  const { lang } = useLang();
+  const translation = useScopedI18n("landing");
+
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -23,38 +26,36 @@ const BurguerNav = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mt-6 flex flex-col justify-around">
-          <Accordion title={lang === "fr" ? "À Propos" : "About"}>
+          <Accordion title={translation("badge.about")}>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Mon cv" : "My Resume"}
+              {translation("badge.resume")}
             </div>
           </Accordion>
 
-          <Accordion title={lang === "fr" ? "Projet" : "Project"}>
+          <Accordion title={translation("badge.skills")}>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Web Documentaire" : "Web Documentary"}
+              {translation("badge.webDocumentary")}
             </div>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Site vitrine" : "Brochure Website"}
+              {translation("badge.brochureWebsite")}
             </div>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Application Web" : "Web Application"}
+              {translation("badge.webApplication")}
             </div>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Site Web 3D" : "3D website"}
+              {translation("badge.dWebsite")}
             </div>
           </Accordion>
 
-          <Accordion title={lang === "fr" ? "Compétence" : "Skill"}>
+          <Accordion title={translation("badge.skills")}>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
               Web Design
             </div>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr"
-                ? "Développement Frontend"
-                : "Frontend development"}
+              {translation("badge.frontend")}
             </div>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
-              {lang === "fr" ? "Développement Backend" : "Backend development"}
+              {translation("badge.backend")}
             </div>
           </Accordion>
 

@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useLang } from "@/lib/store";
+import { useScopedI18n } from "@/locales/client";
 import NavButton from "./NavButton";
 import { ScrollText } from "lucide-react";
 import { IoMdPaper } from "react-icons/io";
 
 const AboutNav = () => {
-  const { lang } = useLang();
+  const translation = useScopedI18n("landing");
   return (
     <div className="fixed transition top-12 w-full h-screen bg-[#2f2f2f] bg-opacity-60 dark:bg-opacity-25 dark:bg-[#fffbf9]">
       <div
@@ -21,7 +21,7 @@ const AboutNav = () => {
          
           />
         </NavButton>
-        <NavButton title={lang === "fr" ? "Mon Cv" : "My Resume"}>
+        <NavButton title={translation("badge.resume")}>
           <IoMdPaper size={60} />
         </NavButton>
       </div>

@@ -30,6 +30,7 @@
     "lucide-react": "^0.428.0",
     "material-react-table": "^2.13.1",
     "next": "14.2.5",
+    "next-international": "^1.2.4",
     "prisma": "^5.18.0",
     "react": "^18",
     "react-dom": "^18",

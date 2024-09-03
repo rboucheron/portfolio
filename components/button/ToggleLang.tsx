@@ -1,12 +1,16 @@
-import React from "react";
-import { useLang } from "@/lib/store";
+"use client";
+
+import { useChangeLocale, useCurrentLocale } from "@/locales/client";
+import { useState } from "react";
 
 const ToggleLang = () => {
-  const { lang, updateLang } = useLang();
+  const [lang, setLang] = useState<"fr" | "en">(useCurrentLocale());
+  const changeLocale = useChangeLocale();
 
   const handleClick = () => {
-    const newLang = lang === "fr" ? "eng" : "fr";
-    updateLang(newLang);
+    const newLang = lang === "fr" ? "en" : "fr";
+    setLang(newLang);
+    changeLocale(newLang);
   };
 
   return (

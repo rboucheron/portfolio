@@ -1,19 +1,17 @@
 import Image from "next/image";
-import { useLang } from "@/lib/store";
+import { useScopedI18n } from "@/locales/client";
 import { ReactNode, useState } from "react";
 import NavButton from "./NavButton";
 
 const ProjectNav = () => {
-  const { lang } = useLang();
+  const translation = useScopedI18n("landing");
   return (
     <div className="fixed transition top-12 w-full h-screen bg-[#2f2f2f] bg-opacity-60 dark:bg-opacity-25 dark:bg-[#fffbf9]">
       <div
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-4 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <NavButton
-          title={lang === "fr" ? "Web Documentaire" : "web documentary"}
-        >
+        <NavButton title={translation("badge.webDocumentary")}>
           <Image
             src="/img/logo_sae302.svg"
             alt="logo l écho des écologues"
@@ -22,7 +20,7 @@ const ProjectNav = () => {
           />
         </NavButton>
 
-        <NavButton title={lang === "fr" ? "Site vitrine" : "Brochure website"}>
+        <NavButton title={translation("badge.brochureWebsite")}>
           <Image
             src="/img/logo_sae303.png"
             alt="ac2fl"
@@ -30,9 +28,7 @@ const ProjectNav = () => {
             height={80}
           />
         </NavButton>
-        <NavButton
-          title={lang === "fr" ? "Application Web" : "Web Application"}
-        >
+        <NavButton title={translation("badge.webApplication")}>
           <Image
             src="/img/logo_sae401.png"
             alt="Sushy House"
@@ -41,7 +37,7 @@ const ProjectNav = () => {
             className="bg-[#2f2f2f] p-2 rounded-md"
           />
         </NavButton>
-        <NavButton title={lang === "fr" ? "Site Web 3D" : "3D website"}>
+        <NavButton title={translation("badge.dWebsite")}>
           <Image
             src="/img/logo_sae402.png"
             alt="Le buggy"

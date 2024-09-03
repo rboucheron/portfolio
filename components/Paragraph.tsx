@@ -1,31 +1,22 @@
 "use client";
 import { ReactNode, useState } from "react";
-import { Lang, Eng, Fr } from "@/components/Lang";
+import { useScopedI18n } from "@/locales/client";
 
 const Paragraph = ({ children }: { children: ReactNode }) => {
+  const translation = useScopedI18n("landing");
   const [readMore, setReadMore] = useState<boolean>(false);
   return (
     <>
-      <p
-        className={`text-md font-light ${readMore ? "" : "line-clamp-3"}  `}
-      >
+      <p className={`text-md font-light ${readMore ? "" : "line-clamp-3"}  `}>
         {children}
       </p>
       <div
         className="font-normal text-sm text-[#f66d0a] cursor-pointer"
         onClick={() => setReadMore(!readMore)}
       >
-        {readMore ? (
-          <Lang>
-            <Eng>Read Less</Eng>
-            <Fr>Lire Moins</Fr>
-          </Lang>
-        ) : (
-          <Lang>
-            <Eng>Read More</Eng>
-            <Fr>Lire Plus</Fr>
-          </Lang>
-        )}
+        {readMore
+          ? translation("badge.readLess")
+          : translation("badge.readMore")}
       </div>
     </>
   );

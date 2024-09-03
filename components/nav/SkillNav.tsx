@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { useLang } from "@/lib/store";
+import { useScopedI18n } from "@/locales/client";
 import NavButton from "./NavButton";
 const SkillNav = () => {
-  const { lang } = useLang();
+  const translation = useScopedI18n("landing");
   return (
     <div className="fixed top-12 left-0 w-full h-screen bg-[#2f2f2f] bg-opacity-60 dark:bg-opacity-25 dark:bg-[#fffbf9]">
       <div
@@ -19,7 +19,7 @@ const SkillNav = () => {
         </NavButton>
         <NavButton
           title={
-            lang === "fr" ? "Développement Frontend" : "Frontend development"
+            translation('badge.frontend')
           }
         >
           <Image
@@ -31,7 +31,7 @@ const SkillNav = () => {
         </NavButton>
         <NavButton
           title={
-            lang === "fr" ? "Développement Backend" : "Backend development"
+            translation('badge.backend')
           }
         >
           <Image
