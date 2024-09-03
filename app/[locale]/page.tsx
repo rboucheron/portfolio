@@ -2,30 +2,30 @@ import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Prisma } from "@/lib/prisma";
-import { Iproject } from "@/interface/Iproject";
+
 import Skills from "@/components/Skills";
 import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
-
+import { getCurrentLocale } from "@/locales/server";
+import { Project } from "@/interface/Iproject";
 export default async function Home() {
   const translation = await getScopedI18n("landing");
-  let projects: Iproject[] | null = null;
+  const lang = getCurrentLocale();
+  let projects: Project[] | null = null;
 
   try {
     const fetchProjects = await Prisma.project.findMany({
       include: {
         images: true,
         technologies: true,
+        translatedProject: true,
       },
     });
-
     projects = fetchProjects.map((project) => ({
       ...project,
-      date: project.date.toISOString(), 
     }));
-
   } catch (error) {
-    console.log('error : ', error);
+    console.error("Error fetching projects:", error);
   }
 
   return (
@@ -75,12 +75,27 @@ export default async function Home() {
             {translation("badge.projects")}
           </h2>
           <div className=" m-auto mt-10 w-3/4 2xl:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
-            {projects !== null &&
+            {projects &&
+              projects.length > 0 &&
               projects.map((project) => (
                 <Link href={`/project/${project.id}`} key={project.id}>
                   <Card>
-                    <CardH1>{project.title}</CardH1>
-                    <CardP>{project.details}</CardP>
+                    {lang === "fr" ? (
+                      <>
+                        <CardH1>{project.title}</CardH1>
+                        <CardP>{project.details}</CardP>
+                      </>
+                    ) : project.translatedProject ? (
+                      <>
+                        <CardH1>{project.translatedProject.title}</CardH1>
+                        <CardP>{project.translatedProject.description}</CardP>
+                      </>
+                    ) : (
+                      <>
+                        <CardH1>{project.title}</CardH1>
+                        <CardP>{project.details}</CardP>
+                      </>
+                    )}
                     <CardBadges>
                       {project.technologies.map((technology) => (
                         <Badge key={technology.id}>{technology.name}</Badge>

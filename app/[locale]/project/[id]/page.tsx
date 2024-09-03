@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { formatDate } from "@/lib/formatDate";
 import { Prisma } from "@/lib/prisma";
 import { getScopedI18n } from "@/locales/server";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,7 +15,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
-import { Iproject } from "@/interface/Iproject";
+import { Project } from "@/interface/Iproject";
 
 export default async function ProjectPage({
   params,
@@ -29,7 +30,7 @@ export default async function ProjectPage({
     return <div>Invalid project ID</div>;
   }
 
-  let project: Iproject | null = null;
+  let project: Project | null = null;
 
   try {
     const rawProject = await Prisma.project.findUnique({
@@ -37,6 +38,7 @@ export default async function ProjectPage({
       include: {
         images: true,
         technologies: true,
+        translatedProject: true, 
       },
     });
 
@@ -46,7 +48,7 @@ export default async function ProjectPage({
 
     project = {
       ...rawProject,
-      date: rawProject.date.toISOString(),
+
     };
   } catch (error) {
     console.error("Error fetching project:", error);
@@ -85,7 +87,8 @@ export default async function ProjectPage({
         <div className="p-4 flex flex-col items-center">
           <BsCalendarDateFill className="text-xl" />
           <div className="font-medium text-center text-md mt-4">
-            {formatDate(project.date)}
+            {//formatDate(project.date)
+            }
           </div>
         </div>
         <div className="p-4">
