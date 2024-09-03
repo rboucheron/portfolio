@@ -13,33 +13,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Administrator {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
-  name     String
-  password String
-  token    String
-}
-
 model Project {
-  id           Int            @id @default(autoincrement())
-  title        String
-  details      String
-  date         DateTime
-  category     String
-  link         String
-  github       String
-  images       Images[]
-  technologies Technologies[]
+  id                Int                @id @default(autoincrement())
+  title             String
+  details           String
+  date              DateTime
+  category          String
+  link              String
+  github            String
+  images            Image[]
+  technologies      Technology[]
+  translatedProject TranslatedProject? @relation
 }
 
-model Technologies {
-  id       Int       @id @default(autoincrement())
-  name     String
-  projects Project[]
+model Technology {
+  id        Int        @id @default(autoincrement())
+  name      String
+  projects  Project[]
 }
 
-model Images {
+model Image {
   id        Int     @id @default(autoincrement())
   src       String
   alt       String
@@ -47,9 +40,11 @@ model Images {
   projectId Int
 }
 
-model Message {
-  id      Int    @id @default(autoincrement())
-  content String
-  sender  String
-  mail    String
+model TranslatedProject {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+  category    String
+  projectId   Int     @unique
+  project     Project @relation(fields: [projectId], references: [id])
 }

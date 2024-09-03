@@ -1,6 +1,1 @@
-{
-  "/api/project/[id]/route": "app/api/project/[id]/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/project/[id]/page": "app/[locale]/project/[id]/page.js"
-}
+{}

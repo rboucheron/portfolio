@@ -17,6 +17,7 @@ export default {
       backend: "Backend Development",
       readMore: "Read More",
       readLess: "Read Less",
+      webSite: 'Web Site', 
     },
   },
 } as const;
