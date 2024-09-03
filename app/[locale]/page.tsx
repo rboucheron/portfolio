@@ -12,14 +12,20 @@ export default async function Home() {
   let projects: Iproject[] | null = null;
 
   try {
-    projects = await Prisma.project.findMany({
+    const fetchProjects = await Prisma.project.findMany({
       include: {
         images: true,
         technologies: true,
       },
     });
+
+    projects = fetchProjects.map((project) => ({
+      ...project,
+      date: project.date.toISOString(), 
+    }));
+
   } catch (error) {
-    console.log("error:", error);
+    console.log('error : ', error);
   }
 
   return (
