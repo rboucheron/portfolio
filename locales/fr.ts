@@ -15,8 +15,8 @@ export default {
       frontend: 'Développement Frontend',
       backend: 'Développement Backend',
       readMore: 'Lire Plus', 
-      readLess: 'Lire Moins'
-
+      readLess: 'Lire Moins',
+      webSite: 'Site Web', 
 
 
 
