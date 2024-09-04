@@ -34,22 +34,18 @@ const CookieModal = ({ consentCookie }: { consentCookie: boolean | null }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="fixed bottom-3 m-auto lg:m-0 lg:right-auto left-3 p-4 grid grid-cols-2 bg-[#fffbf9] border border-[#ff6d09] w-11/12 lg:w-1/4 2xl:w-1/5 rounded-md gap-2 dark:bg-[#2f2f2f]"
+      className="fixed bottom-3 m-auto lg:m-0 lg:right-auto  left-3 p-4 grid grid-cols-2 bg-[#fffbf9] border border-[#ff6d09] w-11/12 lg:w-1/4 2xl:w-1/5 rounded-md gap-2 dark:bg-[#2f2f2f]"
     >
       <div className="flex-col mb-2 col-span-2">
-        <h4 className="text-md font-semibold text-[#ff6d09] mb-2">
-          Nous respectons votre vie privée
-        </h4>
-        <Paragraph className="text-sm font-extralight">
-          Nous utilisons des cookies pour vous offrir la meilleure expérience sur notre site. Ces
-          cookies nous permettent de personnaliser le contenu et de vous proposer des
-          fonctionnalités adaptées.
-        </Paragraph>
+  
+        <p className="text-sm font-extralight">
+        Ce site utilise des cookies pour améliorer votre expérience de navigation.
+        </p>
       </div>
-      <div className="w-full text-center text-md hover:text-[#ff6d09] cursor-pointer" onClick={handleRefuse}>
+      <div className="w-full text-center text-md text-[#111827] hover:text-[#ff6d09] cursor-pointer p-2 transition delay-150 duration-300 ease-in-out" onClick={handleRefuse}>
         Refuser
       </div>
-      <div className="w-full text-center text-md hover:text-[#ff6d09] cursor-pointer" onClick={handleAccept}>
+      <div className="w-full text-center text-md hover:bg-[#ff6d09] cursor-pointer bg-[#111827] p-2 rounded-lg text-[#f9fafb] transition delay-150 duration-300 ease-in-out" onClick={handleAccept}>
         Accepter
       </div>
     </motion.div>
