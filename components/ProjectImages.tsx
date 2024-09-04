@@ -26,7 +26,7 @@ export const ProjectImages = ({ Images }: { Images: Iimage[] }) => {
             quality={100}
           />
         </div>
-        <div onClick={handleOpen}>
+        <div onClick={() => setOpenCarrousel(true)}>
           <Image
             src={`/img/${Images[1].src}`}
             alt={Images[1].alt}
@@ -44,7 +44,7 @@ export const ProjectImages = ({ Images }: { Images: Iimage[] }) => {
         >
           <div onClick={(e) => e.stopPropagation()} className="w-1/2 m-auto my-36">
             <Carousel>
-              <CarouselContent>
+              <CarouselContent className="m-auto">
                 {Images.map((image, index) => (
                   <CarouselItem key={index}>
                     <Image

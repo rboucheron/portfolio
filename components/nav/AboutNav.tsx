@@ -12,15 +12,20 @@ const AboutNav = () => {
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-2 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <NavButton title="GitHub">
-          <Image
-            src="/img/github.svg"
-            alt="logo de github"
-            width={60}
-            height={60}
-         
-          />
-        </NavButton>
+        <a
+          href="https://github.com/rboucheron"
+          className=" justify-self-center"
+        >
+          <NavButton title="GitHub">
+            <Image
+              src="/img/github.svg"
+              alt="logo de github"
+              width={60}
+              height={60}
+            />
+          </NavButton>
+        </a>
+
         <NavButton title={translation("badge.resume")}>
           <IoMdPaper size={60} />
         </NavButton>
