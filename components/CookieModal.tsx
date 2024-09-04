@@ -13,7 +13,6 @@ const CookieModal = ({ consentCookie }: { consentCookie: boolean | null }) => {
     if (consentCookie !== null) {
       updateAuthorization(consentCookie);
     }
-    console.log(consentCookie)
   }, [consentCookie, updateAuthorization]);
 
   const handleRefuse = () => {
