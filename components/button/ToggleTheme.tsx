@@ -1,13 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import Cookies from "js-cookie";
+import { useAuthorization } from "@/lib/store";
 
 const ToggleTheme = () => {
   const [isDark, setIsDark] = useState(false);
-
-  const handleClick = () => {
+  const { Authorization } = useAuthorization();
+  
+  const handleClick = () => {  
     setIsDark(!isDark);
     document.documentElement.classList.toggle("dark");
+    setCookieTheme();
+  };
+
+  const setCookieTheme = () => {
+    if (Authorization) {
+      const globalTheme = {
+        isDark: !isDark,
+      };
+      Cookies.set("globalTheme", JSON.stringify(globalTheme), { expires: 7 });
+    }
   };
 
   return (
@@ -15,7 +28,7 @@ const ToggleTheme = () => {
       onClick={handleClick}
       className="grid justify-items-center cursor-pointer"
     >
-      {isDark ? <Sun color="#ff6d0a" /> : <Moon color="#ff6d0a" /> }
+      {isDark ? <Sun color="#ff6d0a" /> : <Moon color="#ff6d0a" />}
     </div>
   );
 };

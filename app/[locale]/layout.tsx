@@ -3,11 +3,14 @@ import Footer from "@/components/footer";
 import Header from "@/components/Header";
 import CookieModal from "@/components/CookieModal";
 import "./globals.css";
+import { GetServerSideProps } from "next";
 import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "Raphaël Boucheron",
   description: " ",
 };
+
+
 
 export default function RootLayout({
   children,
@@ -32,3 +35,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
