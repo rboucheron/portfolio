@@ -7,8 +7,12 @@ import { useAuthorization } from "@/lib/store";
 const ToggleTheme = () => {
   const [isDark, setIsDark] = useState(false);
   const { Authorization } = useAuthorization();
-  
-  const handleClick = () => {  
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const handleClick = () => {
     setIsDark(!isDark);
     document.documentElement.classList.toggle("dark");
     setCookieTheme();
