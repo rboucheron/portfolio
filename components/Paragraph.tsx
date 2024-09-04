@@ -2,12 +2,12 @@
 import { ReactNode, useState } from "react";
 import { useScopedI18n } from "@/locales/client";
 
-const Paragraph = ({ children }: { children: ReactNode }) => {
+const Paragraph = ({ children, className }: { children: ReactNode, className? : string }) => {
   const translation = useScopedI18n("landing");
   const [readMore, setReadMore] = useState<boolean>(false);
   return (
     <>
-      <p className={`text-md font-light ${readMore ? "" : "line-clamp-3"}  `}>
+      <p className={`text-md font-light ${readMore ? "" : "line-clamp-3"} ${className}  `}>
         {children}
       </p>
       <div

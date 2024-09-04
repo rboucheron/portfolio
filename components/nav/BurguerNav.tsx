@@ -1,6 +1,7 @@
 "use client";
 import Accordion from "../Accordion";
 import { useScopedI18n } from "@/locales/client";
+import Link from "next/link"; 
 
 const BurguerNav = ({
   isOpen,
@@ -32,19 +33,19 @@ const BurguerNav = ({
             </div>
           </Accordion>
 
-          <Accordion title={translation("badge.skills")}>
-            <div className="ml-2 cursor-pointer hover:text-gray-400">
+          <Accordion title={translation("badge.projects")}>
+            <Link href={`/project/5`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.webDocumentary")}
-            </div>
-            <div className="ml-2 cursor-pointer hover:text-gray-400">
+            </Link>
+            <Link href={`/project/7`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.brochureWebsite")}
-            </div>
-            <div className="ml-2 cursor-pointer hover:text-gray-400">
+            </Link>
+            <Link href={`/project/9`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.webApplication")}
-            </div>
-            <div className="ml-2 cursor-pointer hover:text-gray-400">
+            </Link>
+            <Link href={`/project/8`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.dWebsite")}
-            </div>
+            </Link>
           </Accordion>
 
           <Accordion title={translation("badge.skills")}>

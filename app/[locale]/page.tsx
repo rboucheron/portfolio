@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
 import { getCurrentLocale } from "@/locales/server";
 import { Project } from "@/interface/Iproject";
+import CookieModal from "@/components/CookieModal";
 export default async function Home() {
   const translation = await getScopedI18n("landing");
   const lang = getCurrentLocale();
@@ -107,6 +108,7 @@ export default async function Home() {
           </div>
         </div>
       </main>
+      < CookieModal />
     </>
   );
 }
