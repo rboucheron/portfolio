@@ -8,7 +8,7 @@ import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
 import { getCurrentLocale } from "@/locales/server";
 import { Project } from "@/interface/Iproject";
-import CookieModal from "@/components/CookieModal";
+
 export default async function Home() {
   const translation = await getScopedI18n("landing");
   const lang = getCurrentLocale();
@@ -32,7 +32,7 @@ export default async function Home() {
   return (
     <>
       <main>
-        <div className=" mt-48">
+        <div className="my-48 lg:my-72 ">
           <h1 className="text-center w-full text-6xl text-gray-900 font-bold dark:text-[#fffbf9]">
             Raphaël Boucheron
           </h1>
@@ -41,7 +41,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="mt-72">
+        <div className="mt-10">
           <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
             {translation("badge.about")}
           </h2>
@@ -108,7 +108,7 @@ export default async function Home() {
           </div>
         </div>
       </main>
-      < CookieModal />
+     
     </>
   );
 }

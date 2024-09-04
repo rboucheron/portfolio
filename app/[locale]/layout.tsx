@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Header from "@/components/Header";
+import CookieModal from "@/components/CookieModal";
 import "./globals.css";
 import { Providers } from "./providers";
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Providers locale={params.locale}>
           <Header />
           {children}
+          < CookieModal />
           <Footer />
         </Providers>
       </body>
