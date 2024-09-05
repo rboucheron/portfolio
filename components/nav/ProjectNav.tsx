@@ -11,7 +11,7 @@ const ProjectNav = () => {
         className="w-full bg-[#fffbf9] dark:bg-[#2f2f2f] grid grid-cols-4 p-4 pt-8 gap-4 "
         onMouseOver={(e) => e.stopPropagation()}
       >
-        <Link href={`/project/5`}>
+        <Link href={`/project/1`}>
           <NavButton title={translation("badge.webDocumentary")}>
             <Image
               src="/img/logo_sae302.svg"
@@ -21,7 +21,7 @@ const ProjectNav = () => {
             />
           </NavButton>
         </Link>
-        <Link href={`/project/7`}>
+        <Link href={`/project/3`}>
           <NavButton title={translation("badge.brochureWebsite")}>
             <Image
               src="/img/logo_sae303.png"
@@ -31,7 +31,7 @@ const ProjectNav = () => {
             />
           </NavButton>
         </Link>
-        <Link href={`/project/9`}>
+        <Link href={`/project/4`}>
           <NavButton title={translation("badge.webApplication")}>
             <Image
               src="/img/logo_sae401.png"
@@ -42,7 +42,7 @@ const ProjectNav = () => {
             />
           </NavButton>
         </Link>
-        <Link href={`/project/8`}>
+        <Link href={`/project/5`}>
           <NavButton title={translation("badge.dWebsite")}>
             <Image
               src="/img/logo_sae402.png"

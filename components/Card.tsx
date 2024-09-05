@@ -20,7 +20,7 @@ export const Card = ({ children }: { children: React.ReactNode }) => {
 
 export const CardH1 = ({ children }: { children: React.ReactNode }) => {
   return (
-    <h3 className="mt-2 text-[#1b1b1b] text-2xl font-semibold dark:text-[#fffbf9]">
+    <h3 className="mt-2 text-[#101827] text-2xl font-normal dark:text-[#fffbf9]">
       {children}
     </h3>
   );
@@ -38,7 +38,7 @@ export const CardBadges = ({ children }: { children: React.ReactNode }) => {
 
 export const Badge = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="bg-[#ff6d09] mr-2 mb-2 py-1 px-4 text-sm rounded-full text-[#fffbf9] dark:text-[#2f2f2f]">
+    <span className="bg-[#F54703] mr-2 mb-2 py-1 px-4 text-sm rounded-full text-[#fffbf9] dark:text-[#2f2f2f]">
       {children}
     </span>
   );
@@ -49,7 +49,7 @@ const CardButton = ({ isHover }: { isHover: boolean }) => {
     <div
       className={`absolute p-2 flex items-center justify-center text-sm rounded-xl bottom-2 right-2 ${
         isHover
-          ? " w-full h-full top-0 bottom-0 right-0 left-0 bg-[#f66d0a] bg-opacity-60 text-[#fffbf9] dark:text-[#1b1b1b] "
+          ? " w-full h-full top-0 bottom-0 right-0 left-0 bg-[#F54703] bg-opacity-40 text-[#fffbf9] dark:text-[#1b1b1b] "
           : "text-[#1b1b1b] dark:text-[#fffbf9]"
       }`}
     >

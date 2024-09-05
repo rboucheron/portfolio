@@ -8,6 +8,9 @@ import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
 import { getCurrentLocale } from "@/locales/server";
 import { Project } from "@/interface/Iproject";
+import Input from "@/components/Input";
+import ContactForm from "@/components/ContactForm";
+import FormHeader from "@/components/FormHeader";
 
 export default async function Home() {
   const translation = await getScopedI18n("landing");
@@ -42,7 +45,7 @@ export default async function Home() {
         </div>
 
         <div className="mt-10">
-          <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
             {translation("badge.about")}
           </h2>
           <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap mt-10">
@@ -66,13 +69,13 @@ export default async function Home() {
           </div>
         </div>
         <div className="mt-64">
-          <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
             {translation("badge.skills")}
           </h2>
           <Skills />
         </div>
         <div className="mt-64">
-          <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
             {translation("badge.projects")}
           </h2>
           <div className=" m-auto mt-10 w-3/4 2xl:w-1/2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-8 sm:gap-y-8">
@@ -106,9 +109,15 @@ export default async function Home() {
                 </Link>
               ))}
           </div>
+          <div className="my-72">
+            <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+              Contact
+            </h2>
+            < FormHeader />
+            <ContactForm />
+          </div>
         </div>
       </main>
-     
     </>
   );
 }

@@ -5,6 +5,7 @@ import CookieModal from "@/components/CookieModal";
 import "./globals.css";
 import { Providers } from "./providers";
 import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Raphaël Boucheron",
@@ -52,6 +53,7 @@ export default function RootLayout({ children, params }: Props) {
           <Header />
           {children}
           <CookieModal consentCookie={consentCookie} />
+          <Toaster />
           <Footer />
         </Providers>
       </body>
