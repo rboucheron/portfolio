@@ -6,18 +6,19 @@ const Input = ({
   label,
   type,
   result,
-  placeHolder,
+  inputValue,
+
 }: {
   label: string;
   type: "text" | "password" | "email";
-  placeHolder: string;
+  inputValue: string;
   result: (Result: string) => void;
 }) => {
-  const [inputValue, setInputValue] = useState<string>("");
+
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setInputValue(value);
+ 
     result(value);
   };
 

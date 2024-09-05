@@ -34,20 +34,20 @@ const BurguerNav = ({
           </Accordion>
 
           <Accordion title={translation("badge.projects")}>
-            <Link href={`/project/5`}  className="ml-2 cursor-pointer hover:text-gray-400">
+            <Link href={`/project/1`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.webDocumentary")}
             </Link>
-            <Link href={`/project/7`}  className="ml-2 cursor-pointer hover:text-gray-400">
+            <Link href={`/project/3`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.brochureWebsite")}
             </Link>
-            <Link href={`/project/9`}  className="ml-2 cursor-pointer hover:text-gray-400">
+            <Link href={`/project/4`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.webApplication")}
             </Link>
-            <Link href={`/project/8`}  className="ml-2 cursor-pointer hover:text-gray-400">
+            <Link href={`/project/5`}  className="ml-2 cursor-pointer hover:text-gray-400">
               {translation("badge.dWebsite")}
             </Link>
           </Accordion>
-
+          
           <Accordion title={translation("badge.skills")}>
             <div className="ml-2 cursor-pointer hover:text-gray-400">
               Web Design
@@ -60,9 +60,7 @@ const BurguerNav = ({
             </div>
           </Accordion>
 
-          <Accordion title="Contact">
-            <div></div>
-          </Accordion>
+       
         </div>
       </div>
     </div>

@@ -1,14 +1,17 @@
 "use client";
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import { Button } from "./ui/button";
 import { useMessage } from "@/lib/store";
 import emailjs from "emailjs-com";
+import { useToast } from "@/hooks/use-toast";
 
 function ContactForm() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [isSend, setIsSend] = useState<boolean>(false);
+  const { toast } = useToast();
   const { message, updateMessage } = useMessage();
 
   const sendEmail = () => {
@@ -21,10 +24,18 @@ function ContactForm() {
       )
       .then(
         (result) => {
-          console.log("Email envoyé avec succès", result.text);
+          setIsSend(true);
+          updateMessage("")
+          toast({
+            description: "Email envoyé avec succès !",
+          });
         },
         (error) => {
           console.error("Erreur lors de l'envoi de l'email", error.text);
+          toast({
+            variant: "destructive",
+            description: "Erreur lors de l'envoi de l'email !",
+          });
         }
       );
   };
@@ -35,16 +46,21 @@ function ContactForm() {
         label="Nom/Prénom"
         type="text"
         result={(result) => setName(result)}
-        placeHolder="Jhone Doe"
+        inputValue={isSend ? "" : name}
       />
       <Input
         label="Email"
         type="email"
         result={(result) => setEmail(result)}
-        placeHolder="Jhone Doe"
+        inputValue={isSend ? "" : email}
       />
-      <Textarea label="Message" result={(result) => updateMessage(result)} />
-      {message !== "" && name !== "" && email !== "" && (
+      <Textarea
+        label="Message"
+        textareaValue={isSend ? "" : message}
+        result={(result) => updateMessage(result)}
+      />
+
+      {message !== "" && name !== "" && email !== "" && isSend === false && (
         <div className="w-full flex justify-center">
           <Button onClick={sendEmail}> Envoyer </Button>
         </div>
