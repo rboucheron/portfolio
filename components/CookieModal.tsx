@@ -42,10 +42,10 @@ const CookieModal = ({ consentCookie }: { consentCookie: boolean | null }) => {
         Ce site utilise des cookies pour améliorer votre expérience de navigation.
         </p>
       </div>
-      <div className="w-full text-center text-md text-[#111827] hover:text-[#ff6d09] cursor-pointer p-2 transition delay-150 duration-300 ease-in-out" onClick={handleRefuse}>
+      <div className="w-full text-center text-md text-[#111827] dark:text-[#f9fafb] hover:text-[#ff6d09] cursor-pointer p-2 transition delay-150 duration-300 ease-in-out" onClick={handleRefuse}>
         Refuser
       </div>
-      <div className="w-full text-center text-md hover:bg-[#ff6d09] cursor-pointer bg-[#111827] p-2 rounded-lg text-[#f9fafb] transition delay-150 duration-300 ease-in-out" onClick={handleAccept}>
+      <div className="w-full text-center text-md hover:bg-[#ff6d09] cursor-pointer bg-[#111827] dark:bg-[#f9fafb] dark:text-[#111827] p-2 rounded-lg text-[#f9fafb] transition delay-150 duration-300 ease-in-out" onClick={handleAccept}>
         Accepter
       </div>
     </motion.div>
