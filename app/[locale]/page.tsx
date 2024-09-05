@@ -8,6 +8,8 @@ import Link from "next/link";
 import { getI18n, getScopedI18n } from "@/locales/server";
 import { getCurrentLocale } from "@/locales/server";
 import { Project } from "@/interface/Iproject";
+import Input from "@/components/Input";
+import ContactForm from "@/components/ContactForm";
 
 export default async function Home() {
   const translation = await getScopedI18n("landing");
@@ -106,9 +108,14 @@ export default async function Home() {
                 </Link>
               ))}
           </div>
+          <div className="my-48">
+            <h2 className="w-full text-center text-2xl text-[#ff6d0a] mb-4">
+              Contact
+            </h2>
+            <ContactForm />
+          </div>
         </div>
       </main>
-     
     </>
   );
 }
