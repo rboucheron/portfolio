@@ -2,15 +2,14 @@ import { Card, CardH1, CardP, CardBadges, Badge } from "@/components/Card";
 import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Prisma } from "@/lib/prisma";
-
 import Skills from "@/components/Skills";
 import Link from "next/link";
-import { getI18n, getScopedI18n } from "@/locales/server";
+import { getScopedI18n } from "@/locales/server";
 import { getCurrentLocale } from "@/locales/server";
 import { Project } from "@/interface/Iproject";
-import Input from "@/components/Input";
 import ContactForm from "@/components/ContactForm";
 import FormHeader from "@/components/FormHeader";
+import Subtitle from "@/components/Subtitle";
 
 export default async function Home() {
   const translation = await getScopedI18n("landing");
@@ -40,7 +39,8 @@ export default async function Home() {
             Raphaël Boucheron
           </h1>
           <p className="w-3/4 text-center text-sm m-auto mt-2">
-            {translation("badge.title")}
+          
+            < Subtitle />
           </p>
         </div>
 
