@@ -18,6 +18,9 @@ export default {
       readMore: "Read More",
       readLess: "Read Less",
       webSite: "Web Site",
+      cookies: 'This site uses cookies to improve your browsing experience.',
+      accept: 'accept', 
+      refuse: 'refuse',
     },
   },
 } as const;

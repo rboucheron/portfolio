@@ -18,6 +18,9 @@ export default {
       readMore: 'Lire Plus', 
       readLess: 'Lire Moins',
       webSite: 'Site Web', 
+      cookies: 'Ce site utilise des cookies pour améliorer votre expérience de navigation.',
+      accept: 'accepter', 
+      refuse: 'refuser',
 
 
 
