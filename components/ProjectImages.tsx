@@ -39,7 +39,7 @@ export const ProjectImages = ({ Images }: { Images: Iimage[] }) => {
       </div>
       {openCarrousel && (
         <div
-          className="fixed w-full h-screen bg-black bg-opacity-60 top-0 left-0 z-50"
+          className="fixed w-full h-screen bg-black dark:bg-white bg-opacity-60 top-0 left-0 z-50"
           onClick={() => setOpenCarrousel(false)}
         >
           <div onClick={(e) => e.stopPropagation()} className="w-1/2 m-auto my-36">
