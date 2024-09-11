@@ -1,6 +1,7 @@
 "use client";
 import VideoNav from "./nav/VideoNav";
 import { useVideo } from "@/lib/store";
+import { useEffect, useRef } from "react";
 
 export const ProjectVideo = ({
   src,
@@ -8,23 +9,48 @@ export const ProjectVideo = ({
   banner,
   width,
   height,
-  type,
+  isPlay,
 }: {
   src: string;
   title: string;
   banner: string;
   width: number;
   height: number;
-  type: string;
+  isPlay: boolean;
 }) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { updateVideo } = useVideo();
+
+  useEffect(() => {
+    if (videoRef.current) {
+      updateVideo({
+        isPlay: false,
+        duration: videoRef.current.duration,
+        title: title,
+        banner: banner,
+        elapsedTime: 0,
+      });
+    }
+  }, []);
+
   return (
-    <div className="fixed w-full h-screen bg-black dark:bg-white dark:bg-opacity-60 bg-opacity-60 top-0 left-0 z-50">
-      <div className="w-3/4 m-auto">
-        <video width={`${width}`} height={`${height}`}>
-          <source src={process.env.NEXT_PUBLIC_API_URL + src} type={type} />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
+    <>
+      {isPlay && (
+        <div className="fixed w-full h-screen bg-black  top-0 left-0 z-50">
+          <div className="w-screen ">
+            <video
+            className="w-screen h-screen"
+              width={`${width}`}
+              height={`${height}`}
+              src={process.env.NEXT_PUBLIC_API_URL + 'img/' + src}
+              ref={videoRef}
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <VideoNav />
+        </div>
+      )}
+    </>
   );
 };

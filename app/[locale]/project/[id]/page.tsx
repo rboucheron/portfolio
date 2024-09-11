@@ -17,6 +17,8 @@ import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Project } from "@/interface/Iproject";
 import { ProjectImages } from "@/components/ProjectImages";
+import { ProjectBanner } from "@/components/ProjectBanner";
+import { title } from "process";
 export default async function ProjectPage({
   params,
 }: {
@@ -95,46 +97,24 @@ export default async function ProjectPage({
           )}
         </h1>
       </div>
-      <div
-        className={`grid grid-cols-2 ${
-          project.link === " " ? "lg:grid-cols-3" : "lg:grid-cols-4"
-        } gap-4 lg:mt-5`}
-      >
-        <div className="p-4 flex flex-col items-center">
-          <BsCalendarDateFill className="text-xl" />
-          <div className="font-medium text-center text-md mt-4">
-            {formatDate(project.date, lang)}
-          </div>
-        </div>
-        <div className="p-4">
-          <h2 className="font-semibold text-center text-xl">Type</h2>
-          <div className="font-medium text-center text-md mt-2">
-            {lang === "fr" ? (
-              <>{project.category}</>
-            ) : project.translatedProject ? (
-              <>{project.translatedProject.category}</>
-            ) : (
-              <>{project.category}</>
-            )}
-          </div>
-        </div>
 
-        {project.link === " " ? (
-          ""
-        ) : (
-          <div className="flex justify-center items-center">
-            <Button asChild>
-              <a href={project.link}>{translation("badge.webSite")}</a>
-            </Button>
-          </div>
-        )}
-
-        <div className="flex justify-center items-center">
-          <Button asChild>
-            <a href={project.github}>Github</a>
-          </Button>
-        </div>
-      </div>
+      <ProjectBanner
+        category={
+          lang === "fr"
+            ? project.category
+            : project.translatedProject
+            ? project.translatedProject.category
+            : project.category
+        }
+        date={project.date}
+        github={project.github}
+        website={project.link != " " ? project.link : null}
+        video={{
+          title: "L'écho des écologues",
+          src: "v1_2.mp4",
+          banner: "ecologue2024-08-3017.30.03.png",
+        }}
+      />
 
       <ProjectImages Images={project.images} />
 

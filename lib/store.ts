@@ -30,13 +30,11 @@ interface videoState {
   duration: number;
   title: string;
   banner: string;
-  url: string;
   setPlay: (isPlay: boolean) => void;
   setElapsedTime: (elapsedTime: number) => void;
   setDuration: (duration: number) => void;
   setTitle: (title: string) => void;
   setBanner: (banner: string) => void;
-  setUrl: (url: string) => void;
   updateVideo: (data: Partial<Omit<videoState, 'updateVideo'>>) => void;
 }
 
@@ -46,15 +44,13 @@ export const useVideo = create<videoState>((set) => ({
   duration: 0,
   title: "",
   banner: "",
-  url: "",
+
 
   setPlay: (isPlay: boolean) => set({ isPlay }),
   setElapsedTime: (elapsedTime: number) => set({ elapsedTime }),
   setDuration: (duration: number) => set({ duration }),
   setTitle: (title: string) => set({ title }),
   setBanner: (banner: string) => set({ banner }),
-  setUrl: (url: string) => set({ url }),
-
   updateVideo: (data) => set((state) => ({
     ...state,
     ...data,

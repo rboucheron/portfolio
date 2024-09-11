@@ -15,7 +15,7 @@ const VideoNav = () => {
       <div>
         <div className="flex space-x-4 ml-4">
           <div className=" w-16 rounded-xl">
-            <Image src={banner} alt={title} width={100} height={100} />
+            <Image src={ '/img/' + banner} alt={title} width={100} height={100} />
           </div>
           <div className="flex flex-col ">
             <h1 className="text-sm text-white font-semibold">{title}</h1>
