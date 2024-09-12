@@ -21,12 +21,15 @@ export default {
       cookies: 'Ce site utilise des cookies pour améliorer votre expérience de navigation.',
       accept: 'accepter', 
       refuse: 'refuser',
+      formulContact: 'N\'hésitez pas à me contacter en utilisant le formulaire ci-dessous.\n J\'attends de vos nouvelles avec impatience !',
+      emailSend: 'Email envoyé avec succès !',
+      emailUnsend: 'Erreur lors de l\'envoi de l\'email',
+      Name: "Nom/Prénom",
+      send: 'Envoyer',
 
 
 
 
-
-      
     },
   },
 } as const;

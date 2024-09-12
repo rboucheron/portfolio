@@ -1,6 +1,7 @@
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaCodepen } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="w-full py-5 bg-[#f66d0a] mt-28">

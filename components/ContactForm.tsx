@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { useMessage } from "@/lib/store";
 import emailjs from "emailjs-com";
 import { useToast } from "@/hooks/use-toast";
+import { useScopedI18n } from "@/locales/client";
 
 function ContactForm() {
   const [name, setName] = useState<string>("");
@@ -13,6 +14,7 @@ function ContactForm() {
   const [isSend, setIsSend] = useState<boolean>(false);
   const { toast } = useToast();
   const { message, updateMessage } = useMessage();
+  const translation = useScopedI18n("landing");
 
   const sendEmail = () => {
     emailjs
@@ -27,14 +29,14 @@ function ContactForm() {
           setIsSend(true);
           updateMessage("")
           toast({
-            description: "Email envoyé avec succès !",
+            description: translation("badge.emailSend"),
           });
         },
         (error) => {
           console.error("Erreur lors de l'envoi de l'email", error.text);
           toast({
             variant: "destructive",
-            description: "Erreur lors de l'envoi de l'email !",
+            description: translation("badge.emailUnsend"),
           });
         }
       );
@@ -43,7 +45,7 @@ function ContactForm() {
   return (
     <div className="w-full sm:w-11/12 lg:w-1/2 m-auto m-y-4 mt-14 mb-32">
       <Input
-        label="Nom/Prénom"
+        label={translation("badge.Name")}
         type="text"
         result={(result) => setName(result)}
         inputValue={isSend ? "" : name}

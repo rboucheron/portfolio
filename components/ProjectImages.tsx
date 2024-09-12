@@ -12,7 +12,6 @@ import {
 
 export const ProjectImages = ({ Images }: { Images: Iimage[] }) => {
   const [openCarrousel, setOpenCarrousel] = useState<boolean>(false);
-  const handleOpen = () => {};
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mt-5">
@@ -39,7 +38,7 @@ export const ProjectImages = ({ Images }: { Images: Iimage[] }) => {
       </div>
       {openCarrousel && (
         <div
-          className="fixed w-full h-screen bg-black dark:bg-white dark:bg-opacity-60 bg-opacity-60 top-0 left-0 z-50"
+          className="fixed w-full h-screen bg-black dark:bg-white dark:bg-opacity-25 bg-opacity-60 top-0 left-0 z-50"
           onClick={() => setOpenCarrousel(false)}
         >
           <div onClick={(e) => e.stopPropagation()} className="w-1/2 m-auto my-36">

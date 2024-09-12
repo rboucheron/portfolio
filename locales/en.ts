@@ -21,6 +21,12 @@ export default {
       cookies: 'This site uses cookies to improve your browsing experience.',
       accept: 'accept', 
       refuse: 'refuse',
+      formulContact: 'Please feel free to contact me using the form below. I look forward to hearing from you!',
+      emailSend: 'Email send with success  !',
+      emailUnsend: 'Error sending email',
+      Name: "Name/First name",
+      send: 'Send',
+
     },
   },
 } as const;

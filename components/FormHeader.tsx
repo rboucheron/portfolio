@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import { useMessage } from "@/lib/store";
+import { useScopedI18n } from "@/locales/client";
 
 const FormHeader = () => {
   const { message } = useMessage();
+    const translation = useScopedI18n("landing");
   return (
     <>
       {message !== "" ? (
@@ -15,8 +17,7 @@ const FormHeader = () => {
         </div>
       ) : (
         <h4 className="text-[#101827] dark:text-white text-sm lg:text-md font-normal w-3/4  lg:w-1/2 m-auto mt-20">
-          N'hésitez pas à me contacter en utilisant le formulaire ci-dessous.
-          J'attends de vos nouvelles avec impatience !
+            {translation('badge.formulContact')}
         </h4>
       )}
 

@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Cookies from "js-cookie";
-import Paragraph from "./Paragraph";
 import { useScopedI18n } from "@/locales/client";
 import { useAuthorization } from "@/lib/store";
 
