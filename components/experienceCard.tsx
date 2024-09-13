@@ -24,7 +24,7 @@ export const ExperienceImage = ({src, alt}: { src: string; alt: string }) => {
     return (
         <>
             <div className=" flex lg:justify-center mt-5 lg:mt-0">
-                <Image src={src} alt={alt} width={1000} height={1000}
+                <Image src={'/img/' + src} alt={alt} width={1000} height={1000}
                        className="rounded-md w-11/12 lg:w-4/5"/>
             </div>
         </>

@@ -17,6 +17,8 @@ import Image from "next/image";
 import Paragraph from "@/components/Paragraph";
 import { Project } from "@/interface/Iproject";
 import { ProjectImages } from "@/components/ProjectImages";
+
+
 export default async function ProjectPage({
   params,
 }: {

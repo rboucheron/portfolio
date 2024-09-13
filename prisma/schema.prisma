@@ -27,9 +27,9 @@ model Project {
 }
 
 model Technology {
-  id        Int        @id @default(autoincrement())
-  name      String
-  projects  Project[]
+  id       Int       @id @default(autoincrement())
+  name     String
+  projects Project[]
 }
 
 model Image {
@@ -47,4 +47,19 @@ model TranslatedProject {
   category    String
   projectId   Int     @unique
   project     Project @relation(fields: [projectId], references: [id])
+}
+
+model Skills {
+  id         Int          @id @default(autoincrement())
+  title      String
+  experience Experience[]
+}
+
+model Experience {
+  id      Int      @id @default(autoincrement())
+  title   String
+  details String
+  src     String
+  alt     String
+  skills  Skills[]
 }
