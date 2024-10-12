@@ -43,7 +43,7 @@ const Skills = () => {
         imageAlt="postgresql"
         title="PostgreSql"
       />
-      <Skill imageSrc="/img/scss.svg" imageAlt="Scss" title="Scss" />
+      <Skill imageSrc="/img/docker.png" imageAlt="Docker" title="Docker" />
       <Skill imageSrc="/img/git.png" imageAlt="Git" title="Git" />
       <Skill imageSrc="/img/symfony.svg" imageAlt="symfony" title="Symfony" />
       <Skill imageSrc="/img/react.svg" imageAlt="React" title="React" />
