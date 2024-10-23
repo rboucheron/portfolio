@@ -53,7 +53,7 @@ const Header = () => {
                 } mt-0 border-b border-b-[#ff6d0a] sticky z-50 top-0 `}
                 onMouseOver={handleCloseAll}
             >
-                <div className="grid grid-cols-2 2xl:px-32 2xl:gap-7">
+                <div className="grid grid-cols-2 2xl:px-48 2xl:gap-7">
                     <Link href="/" className="w-14 pl-4 pt-2 pb-2">
                         <Image src={Logo} alt="Logo du portfolio" className="w-full"/>
                     </Link>

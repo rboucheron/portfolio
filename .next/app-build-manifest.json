@@ -11,10 +11,10 @@
       "static/css/app/[locale]/layout.css",
       "static/chunks/app/[locale]/layout.js"
     ],
-    "/[locale]/skills/[id]/page": [
+    "/[locale]/project/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[locale]/skills/[id]/page.js"
+      "static/chunks/app/[locale]/project/[id]/page.js"
     ]
   }
 }
