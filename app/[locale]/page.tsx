@@ -33,8 +33,8 @@ export default async function Home() {
 
   return (
     <>
-      <main>
-        <div className="my-48 lg:my-72 ">
+      <main className="2xl:px-20">
+        <div className="my-48 lg:my-72  ">
           <h1 className="text-center w-full text-6xl text-gray-900 font-bold dark:text-[#fffbf9]">
             Raphaël Boucheron
           </h1>
