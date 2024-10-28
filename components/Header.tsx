@@ -46,7 +46,7 @@ const Header = () => {
     return (
         <>
             <header
-                className={`w-screen bg-[#fffbf9] dark:bg-[#2f2f2f] ${
+                className={`w-full bg-[#fffbf9] dark:bg-[#2f2f2f] ${
                     isOpenProject || isOpenSkill || isOpenAbout
                         ? ""
                         : "dark:bg-opacity-60 bg-opacity-60 backdrop-blur-sm"
