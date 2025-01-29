@@ -39,8 +39,7 @@ export default async function Home() {
             Raphaël Boucheron
           </h1>
           <p className="w-3/4 text-center text-sm m-auto mt-2">
-          
-            < Subtitle />
+            <Subtitle />
           </p>
         </div>
 
@@ -109,11 +108,17 @@ export default async function Home() {
                 </Link>
               ))}
           </div>
+          <div className="mt-64">
+            <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+              {translation("badge.veille")}
+            </h2>
+            <Skills />
+          </div>
           <div className="my-72">
             <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
               Contact
             </h2>
-            < FormHeader />
+            <FormHeader />
             <ContactForm />
           </div>
         </div>

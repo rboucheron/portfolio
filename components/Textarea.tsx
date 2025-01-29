@@ -19,14 +19,14 @@ const Textarea = ({
 
   return (
     <div className="mb-10 w-3/4 m-auto">
-      {(isFocus || textareaValue !== "") && (
+ 
         <label
           className="block text-[#2f2f2f] dark:text-[#fffbf9] text-sm font-normal mb-1"
           htmlFor={label}
         >
           {label}
         </label>
-      )}
+   
 
       <textarea
         className={`bg-[#ff6d0a]  ${
@@ -35,7 +35,7 @@ const Textarea = ({
             : "placeholder-[#2f2f2f]  dark:placeholder-[#fffbf9] bg-opacity-80"
         } rounded-md appearance-none border border-[#2f2f2f7e] dark:border-[#fffbf9bd] placeholder:text-sm w-full p-1.5 dark:text-[#2f2f2f]  text-[#fffbf9] leading-tight focus:outline-none h-28`}
         id={label}
-        placeholder={label}
+
         value={textareaValue}
         onChange={handleChange}
         onFocus={() => setIsFocus(true)}

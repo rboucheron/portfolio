@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 
+
 const Input = ({
   label,
   type,
@@ -23,17 +24,15 @@ const Input = ({
   };
 
   return (
-    <div className="mb-10 w-3/4 m-auto">
-      {isFocus || inputValue != "" ? (
+    <div className="mb-7 w-3/4 m-auto">
+    
         <label
           className={`block text-[#2f2f2f] dark:text-[#fffbf9] text-sm font-normal mb-1`}
           htmlFor={label}
         >
           {label}
         </label>
-      ) : (
-        ""
-      )}
+   
 
       <input
         className={` bg-[#ff6d0a]   ${
@@ -43,7 +42,7 @@ const Input = ({
         }  rounded-md appearance-none border border-[#2f2f2f7e] dark:border-[#fffbf9bd] placeholder:text-sm  w-full p-1.5 dark:text-[#2f2f2f]  text-[#fffbf9] leading-tight focus:outline-none `}
         id={label}
         type={type}
-        placeholder={label}
+
         onChange={handleChange}
         value={inputValue}
         onFocus={() => setIsFocus(true)}

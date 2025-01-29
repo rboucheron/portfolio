@@ -2,7 +2,7 @@ export interface Project {
   id: number;
   title: string;
   details: string;
-  date: Date; // ou string, selon ce que vous utilisez
+  date: Date;
   category: string;
   link: string;
   github: string;

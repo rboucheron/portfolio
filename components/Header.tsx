@@ -77,14 +77,7 @@ const Header = () => {
                         >
                             {translation("badge.projects")}
                         </div>
-                        <div
-                            className={`hidden lg:flex text-sm text-[#ff6d0a] border-b-2  ${
-                                isOpenSkill ? " border-[#ff6d0a]" : "border-transparent"
-                            }  font-normal text-center cursor-pointer`}
-                            onMouseOver={handleSkillHover}
-                        >
-                            {translation("badge.skills")}
-                        </div>
+        
 
                         <div className="sm:pl-2 flex items-center space-x-1.5 sm:space-x-2 lg:space-x-4 sm:pr-2 ">
                             <ToggleTheme/>

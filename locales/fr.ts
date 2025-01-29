@@ -4,7 +4,7 @@ export default {
       job: "Développeur fullstack chez SNCF Voyageur",
       study:"étudient en BUT MMI", 
       profil:
-        "Depuis toujours, je suis passionné par l'informatique, qui est pour moi à la fois un outil de travail, de communication et de divertissement. J'ai commencé mon parcours en réalisant des projets avec des cartes électroniques Arduino puis en intégrant des sites web en HTML, CSS et JavaScript. Après l’obtention d’un BAC sciences et technologie de l’industrie et du développement durable, je poursuis mes études en BUT métiers du multimédia et de l’internet pour devenir développeur Full Stack. J'apprends et j'acquiers des compétences dans le développement web, le design et l'audio-visuel.",
+        "Depuis toujours, je suis passionné par l'informatique, qui est pour moi à la fois un outil de travail, de communication et de divertissement. J'ai commencé mon parcours en réalisant des projets avec des cartes électroniques Arduino puis en intégrant des sites web en HTML, CSS et JavaScript. Après l’obtention d’un BAC sciences et technologie de l’industrie et du développement durable, je poursuis mes études en BUT métiers du multimédia et de l’internet pour devenir développeur Full Stack.",
       skills: "Compétences", 
       about: "A Propos", 
       projects: "Projets",
@@ -26,6 +26,7 @@ export default {
       emailUnsend: 'Erreur lors de l\'envoi de l\'email',
       Name: "Nom/Prénom",
       send: 'Envoyer',
+      veille: 'Veille Technologique'
 
 
 

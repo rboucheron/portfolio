@@ -26,6 +26,7 @@ export default {
       emailUnsend: 'Error sending email',
       Name: "Name/First name",
       send: 'Send',
+      veille: 'technology watch'
 
     },
   },
