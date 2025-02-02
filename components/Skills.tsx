@@ -27,7 +27,7 @@ const Skills = () => {
   return (
     <motion.div
       ref={ref}
-      className="xl:w-1/2 lg:w-3/4 sm:w-1/2 place-content-center place-items-center m-auto grid grid-cols-3 lg:grid-cols-5 mt-10 sm:gap-2 lg:gap-4"
+      className="xl:w-1/2 lg:w-3/4 sm:w-1/2 place-content-center place-items-center m-auto grid grid-cols-3 lg:grid-cols-5 mt-10 sm:gap-2 lg:gap-4 dark:text-background text-foreground"
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
@@ -80,7 +80,7 @@ const Skill = ({
         className="select-none"
         draggable="false"
       />
-      <h3 className="text-sm font-extralight text-center mt-4 select-none ">
+      <h3 className="text-sm font-extralight text-center mt-4 select-none dark:text-background text-foreground">
         {title}
       </h3>
     </motion.div>

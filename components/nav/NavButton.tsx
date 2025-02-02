@@ -17,7 +17,7 @@ const NavButton = ({ title, children }: NavButtonProps): JSX.Element => {
     >
       <h2
         className={`text-md font-semibold text-center ${
-          isHover ? "text-[#ff7518]" : ""
+          isHover ? "text-success" : " text-neutral dark:text-lightneutral"
         }`}
       >
         {title}

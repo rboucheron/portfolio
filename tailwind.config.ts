@@ -1,83 +1,97 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-    darkMode: ["class"],
-    content: [
-        "./pages/**/*.{ts,tsx}",
-        "./components/**/*.{ts,tsx}",
-        "./app/**/*.{ts,tsx}",
-        "./src/**/*.{ts,tsx}",
-    ],
-    prefix: "",
-    theme: {
-        container: {
-            center: true,
-            padding: "2rem",
-            screens: {
-                "2xl": "1400px",
-            },
-        },
-        extend: {
-            fontFamily: {
-                sans: ["JetBrainsMonoNL", "monospace"],
-            },
-            colors: {
-                border: "hsl(var(--border))",
-                input: "hsl(var(--input))",
-                ring: "hsl(var(--ring))",
-                background: "hsl(var(--background))",
-                foreground: "hsl(var(--foreground))",
-                primary: {
-                    DEFAULT: "hsl(var(--primary))",
-                    foreground: "hsl(var(--primary-foreground))",
-                },
-                secondary: {
-                    DEFAULT: "hsl(var(--secondary))",
-                    foreground: "hsl(var(--secondary-foreground))",
-                },
-                destructive: {
-                    DEFAULT: "hsl(var(--destructive))",
-                    foreground: "hsl(var(--destructive-foreground))",
-                },
-                muted: {
-                    DEFAULT: "hsl(var(--muted))",
-                    foreground: "hsl(var(--muted-foreground))",
-                },
-                accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))",
-                },
-                popover: {
-                    DEFAULT: "hsl(var(--popover))",
-                    foreground: "hsl(var(--popover-foreground))",
-                },
-                card: {
-                    DEFAULT: "hsl(var(--card))",
-                    foreground: "hsl(var(--card-foreground))",
-                },
-            },
-            borderRadius: {
-                lg: "var(--radius)",
-                md: "calc(var(--radius) - 2px)",
-                sm: "calc(var(--radius) - 4px)",
-            },
-            keyframes: {
-                "accordion-down": {
-                    from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
-                },
-                "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
-                    to: { height: "0" },
-                },
-            },
-            animation: {
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out",
-            },
-        },
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
     },
-    plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
+    extend: {
+      fontFamily: {
+        sans: ["JetBrainsMonoNL", "monospace"],
+        dyslexic: ["OpenDyslexic", "sans-serif"],
+      },
+      colors: {
+        border: "#3D5A80", // Bleu foncé
+        input: "#98C1D9", // Bleu clair
+        ring: "#F4A261", // Orange doux
+        background: "#f8edeb", // Bleu pastel clair
+        foreground: "#293241", // Bleu foncé profond
+
+        primary: {
+          DEFAULT: "#293241",
+          foreground: "#E0FBFC",
+        },
+        secondary: {
+          DEFAULT: "#EE6C4D",
+          foreground: "#E0FBFC",
+        },
+        destructive: {
+          DEFAULT: "#B56576", // Rose foncé
+          foreground: "#E0FBFC",
+        },
+        muted: {
+          DEFAULT: "#6D597A", // Violet grisé
+          foreground: "#E0FBFC",
+        },
+        accent: {
+          DEFAULT: "#2A9D8F", // Vert émeraude
+          foreground: "#293241",
+        },
+        popover: {
+          DEFAULT: "#FFD166", // Jaune pastel
+          foreground: "#293241",
+        },
+        card: {
+          DEFAULT: "#C7D3DD", // Gris bleu clair
+          foreground: "#293241",
+        },
+
+        // Autres couleurs personnalisées
+        darkblue: "#3D5A80",
+        info: "#98C1D9",
+        warning: "#F4A261",
+        success: "#2A9D8F",
+        error: "#B56576",
+        highlight: "#FFD166",
+        neutral: "#6D597A",
+        lightneutral: "#B0A0BA",
+        blackBlue: "#051923",
+        lightBlue: "#e7ecef"
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/line-clamp")],
 } satisfies Config;
 
 export default config;

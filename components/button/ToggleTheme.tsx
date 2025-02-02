@@ -32,7 +32,11 @@ const ToggleTheme = () => {
       onClick={handleClick}
       className="grid justify-items-center cursor-pointer"
     >
-      {isDark ? <Sun color="#ff6d0a" /> : <Moon color="#ff6d0a" />}
+      <Moon
+        className={`${isDark ? ' text-success ' : 'text-neutral dark:text-lightneutral'}`}
+        size={28}
+        strokeWidth={2.25}
+      />
     </div>
   );
 };

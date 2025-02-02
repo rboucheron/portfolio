@@ -35,7 +35,7 @@ export default async function Home() {
     <>
       <main className="2xl:mx-24 ">
         <div className="my-48 lg:my-72  ">
-          <h1 className="text-center w-full text-6xl text-gray-900 font-bold dark:text-[#fffbf9]">
+          <h1 className="text-center w-full text-6xl text-[#6D597A] font-bold dark:text-background">
             Raphaël Boucheron
           </h1>
           <p className="w-3/4 text-center text-sm m-auto mt-2">
@@ -44,7 +44,7 @@ export default async function Home() {
         </div>
 
         <div className="mt-10">
-          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-destructive mb-4">
             {translation("badge.about")}
           </h2>
           <div className="w-11/12 2xl:w-3/4 m-auto flex flex-col lg:flex-row lg:flew-wrap mt-10">
@@ -58,7 +58,7 @@ export default async function Home() {
               />
             </div>
             <div className="w-11/12 lg:w-4/5 m-auto mt-8 lg:mt-0">
-              <p className="hidden lg:block text-md font-light ml-8 ">
+              <p className="hidden lg:block text-md font-light ml-8 text-primary dark:text-background ">
                 {translation("badge.profil")}
               </p>
               <div className="lg:hidden">
@@ -68,13 +68,13 @@ export default async function Home() {
           </div>
         </div>
         <div className="mt-64">
-          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-destructive mb-4">
             {translation("badge.skills")}
           </h2>
           <Skills />
         </div>
         <div className="mt-64">
-          <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+          <h2 className="w-full text-center text-3xl text-destructive mb-4">
             {translation("badge.projects")}
           </h2>
           <div className=" m-auto flex flex-wrap justify-center 2xl:mx-10 2xl:px-44 ">
@@ -110,7 +110,7 @@ export default async function Home() {
           </div>
     
           <div className="my-72">
-            <h2 className="w-full text-center text-3xl text-[#ff6d0a] mb-4">
+            <h2 className="w-full text-center text-3xl text-destructive mb-4">
               Contact
             </h2>
             <FormHeader />

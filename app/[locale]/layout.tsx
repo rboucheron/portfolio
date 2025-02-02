@@ -48,7 +48,7 @@ export default function RootLayout({ children, params }: Props) {
   return (
     <html lang={params.locale} className={`${isDarkMode ? "dark" : ""}`}>
       <link rel="icon" href="/img/icon.svg" />
-      <body className={`bg-[#fffbf9] dark:bg-[#2f2f2f]`}>
+      <body className={`bg-background dark:bg-foreground`}>
         <Providers locale={params.locale}>
           <Header />
           {children}

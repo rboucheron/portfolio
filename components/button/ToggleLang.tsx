@@ -20,8 +20,8 @@ const ToggleLang = () => {
     >
       {lang === "fr" ? (
         <svg
-          width="22"
-          height="22"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -54,14 +54,14 @@ const ToggleLang = () => {
           </g>
           <defs>
             <clipPath id="clip0_6_10559">
-              <rect width="24" height="24" fill="white" />
+              <rect width="25" height="25" fill="white" />
             </clipPath>
           </defs>
         </svg>
       ) : (
         <svg
-          width="22"
-          height="22"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const ToggleLang = () => {
           </g>
           <defs>
             <clipPath id="clip0_6_9894">
-              <rect width="24" height="24" fill="white" />
+              <rect width="25" height="25" fill="white" />
             </clipPath>
           </defs>
         </svg>
