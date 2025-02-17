@@ -1,101 +1,117 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useScopedI18n } from "@/locales/client";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "@/public/img/logo.svg";
 import ToggleTheme from "./button/ToggleTheme";
 import ToggleLang from "./button/ToggleLang";
 import ProjectNav from "./nav/ProjectNav";
-import SkillNav from "./nav/SkillNav";
-import { useScopedI18n } from "@/locales/client";
-import Link from "next/link";
-import { Menu } from "lucide-react";
-import BurguerNav from "./nav/BurguerNav";
 import AboutNav from "./nav/AboutNav";
+import BurguerNav from "./nav/BurguerNav";
 
 const Header = () => {
-  const [isOpenProject, setIsOpenProject] = useState<boolean>(false);
-  const [isOpenSkill, setIsOpenSkill] = useState<boolean>(false);
-  const [isOpenAbout, setIsOpenAbout] = useState<boolean>(false);
+  const [activeNav, setActiveNav] = useState<string | null>(null);
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const translation = useScopedI18n("landing");
 
-  const handleSkillHover = () => {
-    setIsOpenSkill(!isOpenSkill);
-    setIsOpenProject(false);
-    setIsOpenAbout(false);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const handleProjectHover = () => {
-    setIsOpenProject(!isOpenProject);
-    setIsOpenSkill(false);
-    setIsOpenAbout(false);
-  };
-  const handleAboutHover = () => {
-    setIsOpenSkill(false);
-    setIsOpenProject(false);
-    setIsOpenAbout(!isOpenAbout);
+  const handleNavHover = (nav: string) => {
+    setActiveNav(activeNav === nav ? null : nav);
   };
 
   const handleCloseAll = () => {
-    setIsOpenProject(false);
-    setIsOpenSkill(false);
-    setIsOpenAbout(false);
+    setActiveNav(null);
   };
+
+  const navItems = [
+    { key: "about", label: translation("badge.about") },
+    { key: "projects", label: translation("badge.projects") },
+  ];
 
   return (
     <>
       <header
-        className={`w-full bg-[#fffbf9] dark:bg-[#2f2f2f] ${
-          isOpenProject || isOpenSkill || isOpenAbout
-            ? ""
-            : "dark:bg-opacity-60 bg-opacity-60 backdrop-blur-sm"
-        } mt-0 border-b border-b-[#ff6d0a] sticky z-50 top-0 `}
+        className={`w-full transition-all duration-300 ${
+          isScrolled
+            ? "bg-gray-300/70 dark:bg-gray-700/70  backdrop-blur-md shadow-md"
+            : "bg-transparent"
+        } sticky top-0 z-50`}
         onMouseOver={handleCloseAll}
       >
-        <div className="grid grid-cols-2 2xl:px-48 2xl:gap-7">
-          <Link href="/" className="w-14 pl-4 pt-2 pb-2">
-            <Image src={Logo} alt="Logo du portfolio" className="w-full" />
-          </Link>
-          <div
-            className="grid place-items-center lg:grid-cols-4 h-full gap-y-2 xl:gap-y-0.5 w-1/2 sm:w-1/4 lg:w-3/5 ml-auto pt-2 pb-2 sm:mr-0"
-            onMouseOver={(e) => e.stopPropagation()}
-          >
-            <div
-              className={`hidden lg:flex text-sm text-[#ff6d0a] border-b-2  ${
-                isOpenAbout ? " border-[#ff6d0a]" : "border-transparent"
-              } font-normal text-center cursor-pointer`}
-              onMouseOver={handleAboutHover}
-            >
-              {translation("badge.about")}
-            </div>
-            <div
-              className={`hidden lg:flex text-sm text-[#ff6d0a] border-b-2  ${
-                isOpenProject ? " border-[#ff6d0a]" : "border-transparent"
-              } font-normal text-center cursor-pointer`}
-              onMouseOver={handleProjectHover}
-            >
-              {translation("badge.projects")}
-            </div>
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+           
 
-            <div className="sm:pl-2 flex items-center space-x-1.5 sm:space-x-2 lg:space-x-4 sm:pr-2 ">
+            <nav className="hidden md:flex space-x-10 " onMouseOver={(e) => e.stopPropagation()}>
+               <Link href="/" className="flex-shrink-0">
+              <Image
+                src={Logo || "/placeholder.svg"}
+                alt="Logo du portfolio"
+                className="h-6 w-auto"
+              />
+            </Link>
+              {navItems.map((item) => (
+                <div
+                  key={item.key}
+                  className="relative"
+                  onMouseEnter={() => handleNavHover(item.key)}
+                >
+                  <button
+                    className={`text-neutral dark:text-lightneutral group inline-flex items-center text-md text-base font-semibold hover:text-success focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ${
+                      activeNav === item.key
+                        ? "text-success dark:text-success"
+                        : ""
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={`ml-2 h-5 w-5 text-neutral dark:text-lightneutral group-hover:text-success transition-transform duration-200 ${
+                        activeNav === item.key ? "transform rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+              ))}
+            </nav>
+
+            <div className="flex items-center justify-end space-x-4 md:flex-1 flex-4 lg:w-0 w-1/4 ">
               <ToggleTheme />
               <ToggleLang />
-              <div
-                className="flex lg:hidden cursor-pointer"
-                onClick={() => setIsBurgerOpen(true)}
-              >
-                <Menu color="#ff6d0a" />
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+                >
+                  <span className="sr-only">Open main menu</span>
+                  {isBurgerOpen ? (
+                    <X className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Menu className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
         </div>
-
-        <div>{isOpenProject && <ProjectNav />}</div>
-        <div>{isOpenSkill && <SkillNav />}</div>
-        <div>{isOpenAbout && <AboutNav />}</div>
+        <div>
+          {activeNav === "about" && <AboutNav />}
+          {activeNav === "projects" && <ProjectNav />}
+        </div>
       </header>
-      <BurguerNav isOpen={isBurgerOpen} setIsOpen={setIsBurgerOpen} />{" "}
+
+      <BurguerNav isOpen={isBurgerOpen} setIsOpen={setIsBurgerOpen} />
     </>
   );
 };
